@@ -2,7 +2,7 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>mcelwain.me</span>,
+  logo: <span>beta.mcelwain.me</span>,
   project: {
     link: 'https://github.com/shuding/nextra-docs-template',
   },
