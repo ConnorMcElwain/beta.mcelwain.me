@@ -1,11 +1,11 @@
 {
-  "index": "Home",
+  "index": "Welcome",
   "projects": {
     "title": "Projects",
     "type": "page"
 },
   "about": {
-    "title": "About",
+    "title": "About Me",
     "type": "page"
   },
   "contact": {
