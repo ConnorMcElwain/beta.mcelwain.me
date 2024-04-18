@@ -2,11 +2,15 @@
   "index": "Welcome",
   "projects": {
     "title": "Projects",
-    "type": "page"
+    "type": "page",
+    "href": "/projects",
+    "newWindow": false
 },
   "posts": {
     "title": "Posts",
-    "type": "page"
+    "type": "page",
+    "href": "/posts",
+    "newWindow": false
 },
   "about": {
     "title": "About Me",
