@@ -1,5 +1,10 @@
 {
-  "index": "Welcome",
+  "index": {
+    "title": "Home",
+    "type": "page",
+    "href": "/index",
+    "newWindow": false
+  },
   "projects": {
     "title": "Projects",
     "type": "page",
