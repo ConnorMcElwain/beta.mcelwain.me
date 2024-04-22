@@ -2,5 +2,6 @@
   "az-900-cert-notes": "AZ-900 Certification Notes",
   "chapter1": "Chapter 1 - Introduction",
   "chapter2": "Chapter 2 - Cloud Concepts",
-  "chapter3": "Chapter 3 - Azure Architect"
+  "chapter3": "Chapter 3 - Azure Architect",
+  "chapter4": "Chapter 4 - Compute"
 }
