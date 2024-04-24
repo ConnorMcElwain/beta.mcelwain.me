@@ -9,18 +9,9 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-  default: {
-    footer: {
-      text: (
-        <span>
-          MIT {new Date().getFullYear()} ©{' '}
-          <a href="https://nextra.site" target="_blank">
-            Nextra
-          </a>
-          .
-        </span>
-      )
-    }
+  docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
+  footer: {
+    text: 'Change Logs',
   },
 }
 
