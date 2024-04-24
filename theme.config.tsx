@@ -9,9 +9,18 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
-  footer: {
-    text: 'Nextra Docs Template',
+  default: {
+    footer: {
+      text: (
+        <span>
+          MIT {new Date().getFullYear()} ©{' '}
+          <a href="https://nextra.site" target="_blank">
+            Nextra
+          </a>
+          .
+        </span>
+      )
+    }
   },
 }
 
