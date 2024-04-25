@@ -1,12 +1,14 @@
 # AZ-900 Certification Notes
 ## Chapter 6.5 - Storage Redundancy
 
+Accidents Happen! These could be in the form of **Hardware Failure** such as a corrupted disk. Or accidents can have a wider scope in which an entire location (Zone/Regional Outage) is temporarily unavailable. For these scenarios, the concept of data redundancy can protect against these unplanned accidents/failures.
+
 ### Importance of Data Redundancy
 ##### Redundancy: Multiple, Replicated Copies of Data
 If one copy fails/is inaccessible, data is still available.
 Azure Storage always creates multiple copies of your data:
 * Automatic
-* Minimum of three copies
+* **Minimum** of three copies
 * Invisible to end user
 
 ### Multiple Redundancy Options
@@ -25,19 +27,19 @@ Azure Storage always creates multiple copies of your data:
 	* Geo-Zone-Redundant Storage (GZRS)
 
 All options include:
-* Three copies in primary region
-* Three copies in secondary region (multi-region options)
+* **Three copies** in primary region
+* **Three copies** in secondary region (multi-region options)
 
 ### Locally Redundant Storage (LRS)
 Three copies in a single location (datacenter/zone)
 * Lowest-cost option
 * Protect against single disk failure
-* Does not protect against zone or regional outage
+* **Does not** protect against zone or regional outage
 
 ### Zone-Redundant Storage (ZRS)
 Three copies across three availability zones
 * One copy in each zone
-* Protect against zone outage, but not regional outage
+* Protect against zone outage, but **not** regional outage
 
 ### Geo-Redundant Storage (GRS)
 Three copies in two different regions
@@ -45,10 +47,11 @@ Three copies in two different regions
 * Three copies in secondary (paired) region physical location (LRS)
 * Protect against primary region failure, but no primary region zone redundancy
 * Can configure read access from secondary region for high availability
+	* In the event of a primary region failure, the failover process of accessing your data from the secondary region will be relatively much quicker than if we had this option disabled
 
 ### Geo-Zone-Redundant Storage (GZRS)
 Maximum redundancy!
-* Copy across three availability zones in primary region (ZRS)
+* Copy across three availability zones in **primary** region (ZRS)
 * Three copies in secondary region physical location/zone (LRS)
 * Protect against primary region failure AND primary region zone failure
 * Can also configure read access from secondary region for high availability

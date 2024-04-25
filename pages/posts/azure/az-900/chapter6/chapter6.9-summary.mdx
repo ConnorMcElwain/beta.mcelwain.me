@@ -19,18 +19,25 @@
 
 * Storage Redundancy
 	* Multiple copies of Azure Storage data
+		* No single disk acts as a single point of failure for your critical data
 	* Minimum three copies
+		* Three copies if you choose **single region** redundancy, six copies if you choose **paired region** redundancy
 	* Single/multiple copies
 	* Single/multiple regions
 * Moving Data
 	* AzCopy: Command-line utility
+		* For blobs, objects, and files
 	* Storage Explorer: GUI interface
+		* User friendly drag and drop interface
 	* Azure File Sync: Sync Azure Files with on-premises file server
 * Additional Migration Options
 	* Azure Data Box: Offline data transfer
+		* Rugged hard drive used to ship massive amounts of data offline
 	* Azure Migrate: Migrate on-premises resources
 		* Servers, databases, applications
 * Premium Performance Options
 	* SSD-backed storage options
+		* For block blobs, page blobs (for unmanaged VM disks), and file shares
 	* Limited redundancy options
+		* Premium page blobs now support **LRS** and **ZRS**
 	* Premium storage types

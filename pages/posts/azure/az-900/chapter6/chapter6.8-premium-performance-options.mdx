@@ -8,6 +8,8 @@ Premium Performance Options for Low-Latency Requirements
 	* Available storage types for each performance option
 	* Redundancy options
 		* Trade more performance for less redundancy
+		* LRS/ZRS only for all types
+	* All premium options have a higher cost
 
 ### Storage Account Performance Options
 * Standard
@@ -30,16 +32,18 @@ Premium Performance Options for Low-Latency Requirements
 ### Premium Page Blobs
 * Supported Storage Type
 	* Page blobs
-		* Unmanaged virtual disk
-* Redundancy
-	* LRS only (single zone)
+		* Unmanaged virtual disk (currently being retired)
+		* Standalone API access
+			* For third party storage solutions which are using Azure page blobs in the background
+	* Redundancy
+		* LRS only (single zone)
 
 ### Premium File Shares
 * Supported Storage Type
 	* Azure Files
 		* Ideal for high-performance enterprise (file server) applications
 		* Supports both Server Message Block (SMB) and Network File System (NFS) file shares
-			* Windows/Linux file shares
+			* Windows (SMB)/Linux (NFS) file shares
 	* Redundancy
 		* LRS/ZRS only
 
