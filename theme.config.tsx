@@ -27,6 +27,12 @@ const config: DocsThemeConfig = {
     link: 'https://discord.com',
   },
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
+  editLink: {
+    component: null
+  },
+  feedback: {
+    content: null
+  },
   footer: {
     text: (
       <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
