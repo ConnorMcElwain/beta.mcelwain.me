@@ -28,7 +28,11 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   footer: {
-    text: 'Nextra docs template',
+    text: (
+      <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me" target="_blank">
+      Change Logs
+    </a>
+    )
   },
 }
 
