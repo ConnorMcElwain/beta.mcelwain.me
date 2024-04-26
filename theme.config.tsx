@@ -9,9 +9,9 @@ const config: DocsThemeConfig = {
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
   footer: {
     text: 'Change Logs',
+    href: "https://github.com/ConnorMcElwain/beta.mcelwain.me"
   },
 }
 
