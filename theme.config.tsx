@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
   logo: <span>beta.mcelwain.me</span>,
@@ -7,8 +8,11 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/ConnorMcElwain',
   },
   useNextSeoProps() {
-    return {
-      titleTemplate: '%s – mcelwain.me'
+    const { asPath } = useRouter()
+    if (asPath !== '/') {
+      return {
+        titleTemplate: '%s – beta'
+      }
     }
   },
   chat: {
