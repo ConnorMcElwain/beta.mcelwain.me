@@ -24,7 +24,7 @@
     "newWindow": false
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "Contact",
     "type": "menu",
     "items": {
       "resume": {
@@ -32,7 +32,7 @@
         "href": "/"
       },
       "email-me": {
-        "title": "Email Me",
+        "title": "Email",
         "href": "mailto:connor@mcelwain.me",
         "newWindow": true
       }
