@@ -25,8 +25,17 @@
   },
   "contact": {
     "title": "Contact ↗",
-    "type": "page",
-    "href": "mailto:connor@mcelwain.me",
-    "newWindow": true
+    "type": "menu",
+    "items": {
+      "resume": {
+        "title": "Resume",
+        "href": "/"
+      },
+      "email-me": {
+        "title": "Email Me",
+        "href": "mailto:connor@mcelwain.me",
+        "newWindow": true
+      }
+    }
   }
 }
