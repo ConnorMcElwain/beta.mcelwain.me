@@ -40,7 +40,6 @@ const config: DocsThemeConfig = {
         <a href="https://beta.mcelwain.me/" target="_blank">
           McElwain.me
         </a>
-        .
       </span>
     )
   },
