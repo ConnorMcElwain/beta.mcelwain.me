@@ -29,7 +29,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   footer: {
     text: (
-      <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me" target="_blank">
+      <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
       Change Logs
     </a>
     )
