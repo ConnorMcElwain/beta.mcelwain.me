@@ -35,9 +35,13 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
-      Change Logs
-    </a>
+      <span>
+        MIT {new Date().getFullYear()} ©{' '}
+        <a href="https://beta.mcelwain.me/" target="_blank">
+          McElwain.me
+        </a>
+        .
+      </span>
     )
   },
 }
