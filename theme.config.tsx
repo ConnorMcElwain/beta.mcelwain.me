@@ -6,6 +6,11 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/ConnorMcElwain',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – mcelwain.me'
+    }
+  },
   chat: {
     link: 'https://discord.com',
   },
