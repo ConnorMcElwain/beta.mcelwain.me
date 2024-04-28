@@ -50,20 +50,4 @@ const config: DocsThemeConfig = {
   },
 }
 
-export const getStaticProps = ({ params }) => {
-  return fetch(`https://api.github.com/repos/shuding/nextra`)
-    .then(res => res.json())
-    .then(repo => ({
-      props: {
-        // We add an `ssg` field to the page props,
-        // which will be provided to the Nextra `useData` hook.
-        ssg: {
-          stars: repo.stargazers_count
-        }
-      },
-      // The page will be considered as stale and regenerated every 60 seconds.
-      revalidate: 60
-    }))
-}
-
 export default config
