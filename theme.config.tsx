@@ -1,7 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
-import { useData } from 'nextra/data'
 
 const config: DocsThemeConfig = {
   banner: {
