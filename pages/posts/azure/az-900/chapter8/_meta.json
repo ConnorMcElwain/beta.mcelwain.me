@@ -8,5 +8,6 @@
   "chapter8.7-external-guest-access": "Chapter 8.7 - External Guest Access",
   "chapter8.8-azure-active-directory-domain-services": "Chapter 8.8 - Azure Active Directory Domain Services",
   "chapter8.9-single-sign-on": "Chapter 8.9 - Single Sign-On",
-  "chapter8.10-summary": "Chapter 8.10 - Summary"
+  "chapter8.10-summary": "Chapter 8.10 - Summary",
+  "chapter8.11-authentication-and-authorization-quiz": "Chapter 8.11 - Authentication and Authorization Quiz"
 }
