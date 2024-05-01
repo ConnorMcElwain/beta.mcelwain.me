@@ -37,11 +37,11 @@ const config: DocsThemeConfig = {
     text: (
       <span>
         MIT {new Date().getFullYear()} ©{' '}
-        <a href="https://beta.mcelwain.me/" target="_blank">
+        <a href="https://beta.mcelwain.me/" target="_blank" class="font-semibold">
           McElwain.me
         </a>{' '}
         |{' '}
-        <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
+        <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank" class="font-semibold">
           Change Logs
         </a>
       </span>
