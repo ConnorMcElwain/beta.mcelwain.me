@@ -5,18 +5,24 @@
     "href": "/",
     "newWindow": false
   },
-  "projects": {
-    "title": "Projects",
-    "type": "page",
-    "href": "/projects",
-    "newWindow": false
-},
-  "posts": {
-    "title": "Posts",
-    "type": "page",
-    "href": "/posts",
-    "newWindow": false
-},
+  "documentation": {
+    "title": "Documentation",
+    "type": "menu",
+    "items": {
+      "posts": {
+        "title": "Posts",
+        "type": "page",
+        "href": "/posts",
+        "newWindow": false
+    },
+      "projects": {
+        "title": "Projects",
+        "type": "page",
+        "href": "/projects",
+        "newWindow": false
+    }
+    }
+  },
   "about": {
     "title": "About",
     "type": "page",
