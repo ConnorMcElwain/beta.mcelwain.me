@@ -5,43 +5,27 @@
     "href": "/",
     "newWindow": false
   },
-  "documentation": {
-    "title": "Documentation",
-    "type": "menu",
-    "items": {
-      "posts": {
-        "title": "Posts",
-        "type": "page",
-        "href": "/posts",
-        "newWindow": false
-    },
-      "projects": {
-        "title": "Projects",
-        "type": "page",
-        "href": "/projects",
-        "newWindow": false
-    }
-    }
-  },
-  "about": {
-    "title": "About",
+  "posts": {
+    "title": "Posts",
     "type": "page",
-    "href": "/about",
+    "href": "/posts",
     "newWindow": false
-  },
-  "contact": {
-    "title": "Contact",
-    "type": "menu",
-    "items": {
-      "resume": {
-        "title": "Resume",
-        "href": "/"
-      },
-      "email-me": {
-        "title": "Email",
-        "href": "mailto:connor@mcelwain.me",
-        "newWindow": true
-      }
-    }
+},
+  "projects": {
+    "title": "Projects",
+    "type": "page",
+    "href": "/projects",
+    "newWindow": false
+},
+"about": {
+  "title": "About",
+  "type": "page",
+  "href": "/about",
+  "newWindow": false
+},
+  "email-me": {
+    "title": "Contact Me",
+    "href": "mailto:connor@mcelwain.me",
+    "newWindow": true
   }
 }
