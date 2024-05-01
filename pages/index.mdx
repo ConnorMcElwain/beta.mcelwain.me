@@ -1,3 +1,4 @@
+import Image from 'next/image';
 # Introduction
  
 Welcome to the [beta](https://beta.mcelwain.me/) version of my website!
@@ -7,13 +8,59 @@ This is where I will be posting all of my personal and professional technical wo
 
 # Hello, I'm Connor McElwain
 
-<div style={{ textAlign: 'center' }}>
-  <Image src="/path/to/your/image.jpg" alt="Picture of me, Connor McElwain" width={200} height={200} className="profile-image" />
-  <h2>Occupation: Network/Systems Technician</h2>
-  <p>
-    [Short description I'll fill in later]
-  </p>
-  <p>
-    [Other small attributes about me, will fill out at some point]
-  </p>
+<div className="profile-container">
+  <div className="profile-image-container">
+    <Image src="/path/to/your/image.jpg" alt="Picture of me, Connor McElwain" width={200} height={200} className="profile-image" />
+  </div>
+  <div className="profile-details">
+    <h2 className="profile-name">Connor McElwain</h2>
+    <p className="profile-occupation">Occupation: Network/Systems Technician</p>
+    <p className="profile-description">
+      [Short description about myself]
+    </p>
+    <p className="profile-attributes">
+      [Other small attributes about myself]
+    </p>
+  </div>
 </div>
+
+<style jsx>{`
+  .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .profile-image-container {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-details {
+    text-align: left;
+  }
+
+  .profile-name {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .profile-occupation {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .profile-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .profile-attributes {
+    font-size: 14px;
+    color: #666;
+  }
+`}</style>
