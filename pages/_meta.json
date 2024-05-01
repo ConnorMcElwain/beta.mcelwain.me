@@ -25,6 +25,7 @@
 },
   "email-me": {
     "title": "Contact Me",
+    "type": "page",
     "href": "mailto:connor@mcelwain.me",
     "newWindow": true
   }
