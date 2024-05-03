@@ -44,6 +44,11 @@ const config: DocsThemeConfig = {
         <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
           Change Logs
         </a>
+        {' '}
+        |{' '}
+        <a href="https://status.mcelwain.me" target="_blank">
+          Status
+        </a>
       </span>
     )
   },
