@@ -9,8 +9,7 @@ const config: DocsThemeConfig = {
       <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me" target="_blank">
         🎉 McElwain.me is now in Beta! Read more →
       </a>
-    ),
-    color: '#FF0000' // Set the banner color to red
+    )
   },
   logo: <span>beta.mcelwain.me</span>,
   project: {
