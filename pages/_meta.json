@@ -28,5 +28,9 @@
     "type": "page",
     "href": "mailto:connor@mcelwain.me",
     "newWindow": true
+  },
+  "read-more": {
+    "title": "Read More",
+    "display": "hidden"
   }
 }
