@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'beta-release',
     text: (
-      <a href="/pages/read-more" target="_blank">
+      <a href="/read-more" target="_blank">
         🎉 McElwain.me is now in Beta! Read more →
       </a>
     )
