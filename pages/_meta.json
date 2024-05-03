@@ -17,20 +17,33 @@
     "href": "/projects",
     "newWindow": false
 },
-"about": {
-  "title": "About",
-  "type": "page",
-  "href": "/about",
-  "newWindow": false
-},
-  "email-me": {
-    "title": "Contact Me",
-    "type": "page",
-    "href": "mailto:connor@mcelwain.me",
-    "newWindow": true
+  "about": {
+    "title": "About",
+    "type": "menu",
+    "items": {
+      "about": {
+        "title": "About Me",
+        "type": "page",
+        "href": "/about",
+        "newWindow": false
+     },
+      "resume": {
+        "title": "Resume",
+        "type": "page",
+        "href": "/components/assets/files/Resume.pdf",
+        "newWindow": true
+      },
+      "contact-me": {
+        "title": "Contact Me",
+        "type": "page",
+        "href": "mailto:connor@mcelwain.me",
+        "newWindow": true
+    }
+    }
   },
   "read-more": {
     "title": "Read More",
-    "display": "hidden"
+    "display": "hidden",
+    "newWindow": false
   }
 }
