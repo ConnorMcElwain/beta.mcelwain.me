@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'beta-release',
     text: (
-      <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me" target="_blank">
+      <a href="/pages/read-more" target="_blank">
         🎉 McElwain.me is now in Beta! Read more →
       </a>
     )
@@ -24,7 +24,14 @@ const config: DocsThemeConfig = {
     }
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://www.linkedin.com/in/connor-mcelwain/',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 248 204">
+        <path
+          
+        />
+      </svg>
+    )
   },
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
   editLink: {
