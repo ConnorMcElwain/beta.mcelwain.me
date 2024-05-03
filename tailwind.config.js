@@ -9,10 +9,7 @@ module.exports = {
     ],
     theme: {
       extend: {
-        'banner': {
-          'backgroundColor': '#FF0000', // red
       }
     },
     plugins: []
-    }
 }
