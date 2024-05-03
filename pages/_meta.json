@@ -30,7 +30,7 @@
       "resume": {
         "title": "Resume",
         "type": "page",
-        "href": "/components/assets/files/Resume.pdf",
+        "href": "/Resume.pdf",
         "newWindow": true
       },
       "contact-me": {
