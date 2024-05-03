@@ -8,7 +8,10 @@ module.exports = {
       './src/**/*.{js,jsx,ts,tsx,md,mdx}'
     ],
     theme: {
-      extend: {}
+      extend: {
+        'banner': {
+          'backgroundColor': '#FF0000', // red
+      }
     },
     plugins: []
   }
