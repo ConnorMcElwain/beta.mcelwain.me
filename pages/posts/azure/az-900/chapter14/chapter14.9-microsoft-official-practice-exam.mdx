@@ -309,3 +309,178 @@ Application Insights is a feature of Azure Monitor that allows you to monitor ru
 	* **Azure Service Health**
 
 Service Health notifies you of Azure-related service issues, such as region-wide downtime.
+
+### Question 51
+* What are two characteristics of a consumption-based model? Each correct answer presents a complete solution.
+	* **no upfront costs**
+	* **the ability to stop paying for resources that are no longer used**
+
+In a consumption-based model, you do not pay for anything until you start using resources, and you only pay for what you use. If you stop using a resource, you stop paying for it. High expenditures are usually associated with the purchase of the physical infrastructure, which is not needed in a consumption-based model.
+
+### Question 52
+* What is an advantage of cloud computing compared to on-premises deployments?
+	* **You can scale more quickly.**
+
+Cloud computing allows you to scale more quickly. Owning your own CPUs and having full access in the event of an internet outage are not features of cloud computing. Working from multiple workstations is not specific to cloud computing compared to an on-premises deployment.
+
+### Question 53
+* **[Answer choice]** refers to upfront costs incurred one time, such as hardware purchases.
+	* **Capital expenditures**
+
+Capital expenditures are one-time expenses that can be deducted over time. Operational expenditures are billed as you use services and a do not have upfront costs.
+
+### Question 54
+* What is high availability in a public cloud environment dependent on?
+	* **the service-level agreement (SLA) that you choose**
+
+Different services have different SLAs. Sometimes different tiers of the same service will offer different SLAs, which can increase or decrease the promised availability.
+
+### Question 55
+* Which cloud service model provides you with the most control over the hardware that runs applications?
+	* **infrastructure as a service (IaaS)**
+
+IaaS is the most flexible category of cloud services. It aims to give you complete control over the hardware that runs applications. Users do not control the operating system and do not configure the underlying servers in PaaS. With SaaS, you are using as-is software hosted in the cloud, instead of creating a platform to host a software yourself.
+
+### Question 56
+* Your organization is building a custom application. You need to focus on application development rather than configuration and management of servers. Which cloud service model should you use?
+	* **platform as a service (PaaS)**
+
+With PaaS, users can focus on application development because the cloud provider handles all the platform management. In SaaS, the cloud provider manages all aspects of the application environment, such as virtual machines, networking resources, data storage, and applications. IaaS is the closest service model to managing physical servers.
+
+### Question 57
+* Which two components are created in an Azure subscription? Each correct answer presents a complete solution.
+	* **resource groups**
+	* **resources**
+
+Resources can only be associated with a single subscription. Subscriptions may be grouped into management groups. An account may be associated with multiple subscriptions.
+
+### Question 58
+* Which resource can you use to manage access, policies, and compliance across multiple subscriptions?
+	* **management groups**
+
+Management groups can be used in environments that have multiple subscriptions to streamline the application of governance conditions. Resource groups can be used to organize Azure resources. Administrative units are used to delegate the administration of Microsoft Entra resources, such as users and groups accounts are used to provide access to resources.
+
+### Question 59
+* Which Azure compute service can you use to deploy and manage a set of identical virtual machines?
+	* **Azure Virtual Machine Scale Sets**
+
+Virtual Machine Scale Sets are an Azure compute resource that you can use to deploy and manage and scale a set of identical virtual machines.
+
+### Question 60
+* Which storage service should you use to store thousands of files containing text and images?
+	* **Azure Blob storage**
+
+Azure Blob storage is an object storage solution that you can use to store massive amounts of unstructured data, such as text or binary data.
+
+### Question 61
+* Which two scenarios are common use cases for Azure Blob storage? Each correct answer presents a complete solution.
+	* **serving images or documents directly to a browser**
+	* **storing data for backup and restore**
+
+Low storage costs and unlimited file formats make blob storage a good location to store backups and archives. Blob storage can be reached from anywhere by using an internet connection. Azure Disk Storage provides disks for Azure virtual machines. Azure Files supports mounting file storage shares.
+
+### Question 62
+* Which two protocols can be used to access Azure file shares? Each correct answer presents a complete solution.
+	* **Network File System (NFS)**
+	* **Server Message Block (SMB)**
+
+Azure Files offers fully managed file shares in the cloud that are accessible via industry-standard SMB and NFS protocols.
+
+### Question 63
+* What is the purpose of defense in depth?
+	* **to use several layers of protection to prevent information from being accessed by unauthorized users**
+
+The objective of defense in depth is to use several layers of protection to prevent information from being accessed or stolen by unauthorized users.
+
+### Question 64
+* What enables a user to sign in one time and use that credential to access multiple resources and applications from different providers?
+	* **single sign-on (SSO)**
+
+SSO enables a user to sign in one time and use that credential to access multiple resources and applications from different providers. MFA is a process whereby a user is prompted during the sign-in process for an additional form of identification. Conditional Access is a tool that Microsoft Entra uses to allow or deny access to resources based on identity signals. Microsoft Entra supports the registration of devices.
+
+### Question 65
+* To which object or level is an Azure role-based access control (RBAC) role applied?
+	* **scope**
+
+An Azure RBAC role is applied to a scope, which is a resource or set of resources that the access applies to. Resource locks prevent the accidental change or deletion of a resource. Resource tags are used to locate and act on resources associated with specific workloads, environments, business units, and owners. Policies enforce different rules across resource configurations so that the configurations stay compliant with corporate standards.
+
+### Question 66
+* Which two services are provided by Microsoft Entra? Each correct answer presents a complete solution.
+	* **authentication**
+	* **single sign-on (SSO)**
+
+Microsoft Entra provides services for verifying identity and access to applications and resources. SSO enables you to remember a single username and password to access multiple applications and is available in Azure AD.
+
+### Question 67
+* Which are two common scenarios for using resource tags? Each correct answer presents a complete solution.
+	* **associating costs with different environments**
+	* **categorizing costs by department**
+
+You can use tags to categorize costs by department, such as human resources, marketing, or finance, or by environment, such as test or production. Resizing underutilized virtual machines is a good cost saving measure and provisioning resources in lower cost regions is a good practice, but resource tags do not help with this.
+
+### Question 68
+* You have an Azure virtual machine that is accessed only between 9:00 and 17:00 each day. What should you do to minimize costs but preserve the associated hard disks and data?
+	* **Deallocate the virtual machine when it is not needed**
+
+If you have virtual machine workloads that are used only during certain periods, but you run them every hour of every day, then you are wasting money. These virtual machines are great candidates to deallocate when not in use and start back when required to save compute costs while the virtual machines are deallocated.
+
+### Question 69
+* What can you use to restrict the deployment of a virtual machine to a specific location?
+	* **Azure Policy**
+
+Azure Policy can help to create a policy for allowed regions, which enables you to restrict the deployment of virtual machines to a specific location.
+
+### Question 70
+* Which two actions can be performed by using Azure portal? Each correct answer presents a complete solution.
+	* **Create new resources.**
+	* **Create Microsoft Entra user**
+
+The Azure portal provides a GUI to view all the services you are using, create new services, configure your services, and view reports.
+
+### Question 71
+* You have a team of Linux administrators that need to manage the resources in Azure. The team wants to use the Bash shell to perform the administration.
+	* **Azure CLI**
+
+Azure CLI allows you to use the Bash shell to perform administrative tasks. Bash is used in Linux environments, so a Linux administrator will probably be more comfortable performing command-line administration from Azure CLI.
+
+### Question 72
+* You need to review the root cause analysis (RCA) report for a service outage that occurred last week. Where should you look for the report?
+	* **Azure Service Health**
+
+After an outage, Service Health provides official incident reports called root cause analysis (RCA), which you can share with stakeholders.
+
+### Question 73
+* You need to be notified when there are new recommendations for reducing Azure costs. Which tool should you use?
+	* **Azure Advisor**
+
+Azure Advisor evaluates Azure resources and makes recommendations to help improve reliability, security, and performance, achieve operational excellence, and reduce costs.
+
+### Question 74
+* You need to create a custom solution that uses thresholds to trigger autoscaling functionality to scale an app up or down to meet user demand. What should you include in the solution?
+	* **Azure Monitor**
+
+Azure Monitor is a platform that collects metric and logging data, such as CPU percentages. The data can be used to trigger autoscaling.
+
+### Question 75
+* Which Azure service can generate an alert if virtual machine utilization is over 80% for five minutes?
+	* **Azure Monitor**
+
+Azure Monitor is a platform for collecting, analyzing, visualizing, and alerting based on metrics. Azure Monitor can log data from an entire Azure and on-premises environment.
+
+### Question 76
+* What can you apply to an Azure virtual machine to ensure that users cannot change or delete the resource?
+	* **a lock**
+
+Incorrect: A user-assigned managed identity –– Adding an identity will not add the ability to change or delete the resource.
+Correct: A lock –– A resource lock will meet both requirements.
+Incorrect: A tag –– A tag will not meet the requirements.
+Incorrect: Conditional Access –– Conditional Access will not meet the requirements.
+
+### Question 77
+* Which feature in the Microsoft Purview governance portal should you use to manage access to data sources and datasets?
+	* **Data Policy**
+
+Incorrect: Data Catalog –– This enables data discovery.
+Incorrect: Data Sharing –– This shares data within and between organizations.
+Incorrect: Data Estate Insights –– This accesses data estate health.
+Correct: Data Policy –– This governs access to data.
