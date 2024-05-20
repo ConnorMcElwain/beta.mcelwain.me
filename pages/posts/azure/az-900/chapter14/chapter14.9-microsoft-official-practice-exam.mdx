@@ -1,0 +1,311 @@
+# AZ-900 Certification Notes
+## Chapter 14.9 - Microsoft Official Practice Exam
+
+### Question 1
+* Which two attributes are characteristics of the private cloud deployment model? Each correct answer presents a complete solution.
+	* **The company has complete control over physical resources and security.**
+	* **Hardware must be purchased.**
+
+In a private cloud, hardware must be purchased for start up and maintenance. In a private cloud, organizations control resources and security. Quick provisioning is a characteristic of the public cloud deployment model. Paying only for what is used is a characteristic of the public cloud deployment model.
+
+### Question 2
+* What are two basic services provided by all cloud providers? Each correct answer presents a complete solution.
+	* **compute**
+	* **storage**
+
+All cloud providers provide compute and storage services. Colocation is when a business rents space in a shared physical datacenter. Application development is the responsibility of the customer and is typically done either in-house or through a third party.
+
+### Question 3
+* Which two characteristics are common advantages of cloud computing? Each correct answer presents a complete solution.
+	* **geo-distribution**
+	* **high availability**
+
+Cloud-based apps can provide a continuous user experience with no apparent downtime, even when things go wrong. You can deploy apps and data to regional datacenters around the globe, thereby ensuring that your customers always have the best performance in their region. Apps in cloud computing can scale vertically and horizontally. In a public cloud model, you do not get physical access to servers, as they are managed by the cloud provider.
+
+### Question 4
+* Which cloud deployment model are you using if you have servers physically located at your organization’s on-site datacenter, and you migrate a few of the servers to the cloud?
+	* **hybrid cloud**
+
+A hybrid cloud is a computing environment that combines a public cloud and a private cloud by allowing data and applications to be shared between them.
+
+### Question 5
+* Increasing compute capacity for an app by adding RAM or CPUs to a virtual machine is called **[answer choice]**.
+	* **vertical scaling**
+
+You scale vertically to increase compute capacity by adding RAM or CPUs to a virtual machine. Scaling horizontally increases compute capacity by adding instances of resources, such as adding virtual machines to the configuration. Disaster recovery keeps data and other assets safe in the event of a disaster. High availability minimizes downtime when things go wrong.
+
+### Question 6
+* Deploying and configuring cloud-based resources quickly as business requirements change is called **[answer choice]**.
+	* **agility**
+
+Agility means that you can deploy and configure cloud-based resources quickly as app requirements change. Scalability means that you can add RAM, CPU, or entire virtual machines to a configuration. Elasticity means that you can configure cloud-based apps to take advantage of autoscaling, so apps always have the resources they need. High availability means that cloud-based apps can provide a continuous user experience with no apparent downtime, even when things go wrong.
+
+### Question 7
+* Increasing compute capacity for an app by adding instances of resources such as virtual machines is called **[answer choice]**.
+	* **horizontal scaling**
+
+Scaling horizontally increases compute capacity by adding instances of resources, such as adding virtual machines to the configuration. You scale vertically by adding RAM or CPUs to a virtual machine. Disaster recovery keeps data and other assets safe in the event of a disaster. High availability minimizes downtime when things go wrong.
+
+### Question 8
+* An example of **[answer choice]** is automatically scaling an application to ensure that the application has the resources needed to meet customer demands.
+	* **elasticity**
+
+Elasticity refers to the ability to scale resources as needed, such as during business hours, to ensure that an application can keep up with demand, and then reducing the available resources during off-peak hours. Agility refers to the ability to deploy new applications and services quickly. High availability refers to the ability to ensure that a service or application remains available in the event of a failure. Geo-distribution makes a service or application available in multiple geographic locations that are typically close to your users.
+
+### Question 9
+* In which two deployment models are customers responsible for managing operating systems that host applications? Each correct answer presents a complete solution.
+	* **infrastructure as a service (IaaS)**
+	* **on-premises**
+
+Operating systems are managed by customers when using IaaS or an on-premises deployments. The operating systems are not accessible in PaaS and SaaS deployments.
+
+### Question 10
+* In a platform as a service (PaaS) model, which two components are the responsibility of the cloud service provider? Each correct answer presents a complete solution.
+	* **operating system**
+	* **physical network**
+
+In PaaS, the cloud provider is responsible for the operating system, physical datacenter, physical hosts, and physical network. In PaaS, the customer is responsible for accounts and identities.
+
+### Question 11
+* Which type of cloud service model is typically licensed through a monthly or annual subscription?
+	* **software as a service (SaaS)**
+
+SaaS is software that is centrally hosted and managed for you and your users or customers. Usually, one version of the application is used for all customers, and it is licensed through a monthly or annual subscription. PaaS and IaaS use a consumption-based model, so you only pay for what you use.
+
+### Question 12
+* What is the customer responsible for in a software as a service (SaaS) model?
+	* **data and access**
+
+SaaS allows you to pay to use an existing application on hardware managed by a third party. You supply data and configure access. Customers are only responsible for storage in a private cloud. Customers are responsible for virtual machines and runtime in IaaS and the private cloud.
+
+### Question 13
+* Which cloud service model is used by Microsoft Office 365?
+	* **software as a service (SaaS)**
+
+SaaS allows users to connect to and use cloud-based apps over the internet. Common examples are email, calendaring, and Office tools, such as Office 365.
+
+### Question 14
+* Which cloud service model is used by Azure SQL Database?
+	* **platform as a service (PaaS)**
+
+Azure SQL Database is a PaaS database engine.
+
+### Question 15
+* **[Answer choice]** is the logical container used to combine and organize Azure resources.
+	* **a resource group**
+
+Resources are combined into resource groups, which act as a logical container into which Azure resources like web apps, databases, and storage accounts, are deployed and managed.
+
+### Question 16
+* **[Answer choice]** are physically separate datacenters within an Azure region.
+	* **Availability zones**
+
+Availability zones are physically separate datacenters within an Azure region. Each availability zone is made up of one or more datacenters equipped with independent power, cooling, and networking.
+
+### Question 17
+* In a region pair, a region is paired with another region in the same **[answer choice]**.
+	* **geography**
+
+Each Azure region is always paired with another region within the same geography, such as US, Europe, or Asia, at least 300 miles away.
+
+## Question 18
+* What is an Azure Storage account named storage001 an example of?
+	* **a resource**
+
+A resource is a manageable item that is available through Azure. Virtual machines, storage accounts, web apps, databases, and virtual networks are examples of resources.
+
+### Question 19
+* For which resource does Azure generate separate billing reports and invoices by default?
+	* **subscriptions**
+
+Azure generates separate billing reports and invoices for each subscription so that you can organize and manage costs. Resource groups can be used to group costs, but you will not receive a separate invoice for each resource group. Management groups are used to efficiently manage access, policies, and compliance for subscriptions. You can set up billing profiles to roll up subscriptions into invoice sections, but this requires customization.
+
+### Question 20
+* Which Azure component allows you to replicate resources across a geography to ensure business continuity during a natural disaster at the primary site?
+	* **region pairs**
+
+Region pairs allow the replication of Azure resources across geographies to help ensure that a secondary region is available in case of any disaster at the primary region.
+
+### Question 21
+* Which two Azure resources can make use of availability zones? Each correct answer presents a complete solution.
+	* **Azure SQL databases**
+	* virtual machines
+
+Availability zones are primarily for virtual machines, managed disks, load balancers, and SQL databases.
+
+### Question 22
+* Which Azure resource is a software emulation of a physical computer that includes a virtual processor, memory, storage, and networking resources?
+	* **a virtual machine**
+
+Virtual machines are software emulations of physical computers. They include a virtual processor, memory, storage, and networking resources. Virtual machines host an operating system, and you can install and run software just like on a physical computer.
+
+### Question 23
+* What can you use to execute code in a serverless environment?
+	* **Azure Functions**
+
+Azure Functions allows you to run code as a service without having to manage the underlying platform or infrastructure. Azure Logic Apps is similar to Azure Functions, but uses predefined workflows instead of developing your own code.
+
+### Question 24 
+* Which scenario is a use case for a VPN gateway?
+	* **connecting an on-premises datacenter to an Azure virtual network**
+
+A VPN gateway is a type of virtual network gateway. Azure VPN Gateway instances are deployed to a dedicated subnet of a virtual network. You can use them to connect on-premises datacenters to virtual networks through a Site-to-Site (S2S) VPN connection.
+
+### Question 25
+* You need to allow resources on two different Azure virtual networks to communicate with each other. What should you configure?
+	* **peering**
+
+You can link virtual networks together by using virtual network peering. Peering enables resources in each virtual network to communicate with each other.
+
+### Question 26
+* What can you use to connect Azure resources, such as Azure SQL databases, to an Azure virtual network?
+	* **service endpoints**
+
+Service endpoints are used to expose Azure services to a virtual network, providing communication between the two. ExpressRoute is used to connect an on-premises network to Azure. NSGs allow you to configure inbound and outbound rules for virtual networks and virtual machines. Peering allows you to connect virtual networks together.
+
+### Question 27
+* What can you use to provide Mac and Android users with access to a Windows environment that will run Windows-based applications?
+	* **Azure Virtual Desktop**
+
+Azure Virtual Desktop is a desktop and application virtualization service that runs in the cloud. It enables your users to use a cloud-hosted version of Windows from any location. Azure Virtual Desktop works across devices such as Windows, Mac, iOS, Android, and Linux. It works with apps that you can use to access Remote Desktops and apps. You can also use most modern browsers to access Azure Virtual Desktop-hosted experiences.
+
+### Question 28
+* Which Azure Blob storage tier stores data offline and offers the lowest storage costs and the highest costs to access data?
+	* **Archive**
+
+The Archive storage tier stores data offline and offers the lowest storage costs, but also the highest costs to rehydrate and access data. The Hot storage tier is optimized for storing data that is accessed frequently. Data in the Cool access tier can tolerate slightly lower availability, but still requires high durability, retrieval latency, and throughput characteristics similar to hot data.
+
+### Question 29
+* Which Azure Blob storage service tier has the highest storage costs and the fastest access times for reading and writing data?
+	* **Hot**
+
+The Hot tier is optimized for storing data that is accessed frequently. The Cool access tier has a slightly lower availability SLA and higher access costs compared to hot data, which are acceptable trade-offs for lower storage costs. Archive storage stores data offline and offers the lowest storage costs, but also the highest costs to rehydrate and access data.
+
+### Question 30
+* What can you use to ensure that a user can only access applications from compliant devices?
+	* **Conditional Access**
+
+Conditional Access is a feature that Microsoft Entra uses to allow or deny access to resources based on identity signals, such as the device being used. SSO enables a user to sign in one time and use that credential to access multiple resources and applications from different providers. MFA is a process whereby a user is prompted during the sign-in process for an additional form of identification. Hybrid identity solutions create a common user identity for authentication and authorization to all resources, regardless of location.
+
+### Question 31
+* What Microsoft Entra feature can you use to configure security authentication that requires users to use their mobile phone to sign in?
+	* **multi-factor authentication (MFA)**
+
+MFA is the concept of requiring something more than only a password to sign in to an application. You can use the mobile phone to receive a phone call, text, or a code to get authenticated.
+
+### Question 32
+* Which Microsoft Entra feature can you use to ensure that users can only access Microsoft Office 365 applications from approved client applications?
+	* **Conditional Access**
+
+Conditional Access allows administrators to control, allow, or deny access to resources based on certain signals. You can require that access to certain applications only be allowed if the users are using an approved client application. MFA is a process whereby a user is prompted during the sign-in process for an additional form of identification. Examples include a code on their mobile phone or a fingerprint scan.
+
+### Question 33
+* What can you use to sync identities from an on-premises Active Directory Domain Services (AD DS) domain to Microsoft Entra tenant?
+	* **Microsoft Entra Connect**
+
+Microsoft Entra Connect syncs user identities from an on-premises Active Directory Domain Services (AD DS) domain to Microsoft Entra. Microsoft Entra Connect allows you to use features such as single sign-on (SSO), MFA, and self-service password reset (SSPR) in both systems. SSPR prevents users from using known compromised passwords.
+
+### Question 34
+* Which two factors affect Azure costs? Each correct answer presents a complete solution.
+	* **resource location**
+	* **resource usage**
+
+Usage meters, such as CPU time, disk size, and write operations, are used to calculate your bill for an Azure resource. Deleting or deallocating a resource means that you will no longer be billed for it. Different regions can have different associated prices. Resources cost the same no matter the time of day or the day of the week.
+
+### Question 35
+* You need to compare the costs of running an application in an on-premises datacenter with the costs of running the application in Azure. What should you use to assist you?
+	* **Total Cost of Ownership (TCO) Calculator**
+
+The TCO Calculator helps you estimate the cost savings over time of operating a solution in Azure compared to operating in an on-premises datacenter.
+
+### Question 36
+* You need to associate the costs of resources to different groups within an organization without changing the location of the resources. What should you use?
+	* **resource tags**
+
+Resource tags can be used to group billing data and categorize costs by runtime environment, such as billing usage for virtual machines running in a production environment.
+
+### Question 37
+* Your organization plans to deploy several production virtual machines that will have consistent resource usage throughout the year. What can you use to minimize the costs of the virtual machines without reducing the functionality of the virtual machines?
+	* **Azure Reservations**
+
+Azure Reservations offers discounted prices on certain Azure services. Azure Reservations can save you up to 72 percent compared to pay-as-you-go prices. To receive a discount, you can reserve services and resources by paying in advance.Spending limits can suspend a subscription when the spend limit is reached.
+
+### Question 38
+* What can be applied to a resource to prevent accidental deletion?
+	* **a resource lock**
+
+A resource lock prevents resources from being accidentally deleted or changed. Resource tags offer the custom grouping of resources. Policies enforce different rules across all resource configurations so that the configurations stay compliant with corporate standards. An initiative is a way of grouping related policies together.
+
+### Question 39
+* You need to ensure that multi-factor authentication (MFA) is enabled on accounts with write permissions in an Azure subscription. What should you implement?
+	* **Azure Policy**
+
+Azure Policy is a service in Azure that enables you to create, assign, and manage policies that control or audit resources.
+
+### Question 40
+* What can you use to ensure that a development team can only create virtual machines of a certain size?
+	* **Azure Policy**
+
+Azure Policy enables you to define both individual policies and groups of related policies called initiatives. Azure Policy evaluates your resources and highlights resources that are not compliant with the policies you created. Azure Policy can also prevent noncompliant resources from being created.
+
+### Question 41
+* What can you use to define the resources you want to provision in a declarative JSON format?
+	* **Azure Resource Manager (ARM) templates**
+
+By using ARM templates, you can describe the resources you want to use in a declarative JSON format.
+
+### Question 42
+* Which two tools are accessible via Azure Cloud Shell to manage an Azure environment?
+	* **Azure CLI**
+	* **Azure PowerShell**
+
+Azure CLI is an executable program with which a user can execute commands in Bash that call the Azure REST API. Azure Cloud Shell also supports Azure PowerShell as an executable program.
+
+### Question 43
+* What should you use to access Azure Cloud Shell?
+	* **a web browser**
+
+Cloud Shell is an interactive, browser-accessible shell for managing Azure resources.
+
+### Question 44
+* What can you use to create resources in Azure and includes a validation step to ensure all resources are created in a specific order based on dependencies, in parallel and idempotent?
+	* **Azure Resource Manager (ARM) templates**
+
+ARM templates define an application's infrastructure requirements for a repeatable deployment that is done in a consistent manner. A validation step ensures that all resources can be created in the proper order based on dependencies, in parallel and idempotent.
+
+### Question 45
+* Which two tools can you use to create a new Azure virtual machine from a mobile device that runs Android? Each correct answer presents complete solution.
+	* **PowerShell in Azure Cloud Shell**
+	* **the Azure portal**
+
+The Azure portal can run on devices that have the Android operating system installed. The browser can be any type, such as Internet Explorer 11, Chrome, Firefox, or Safari (all the latest versions). When you visit the portal, you will see Cloud Shell. Users can then access Bash and PowerShell from within Cloud Shell. You can use Bash and PowerShell to create Azure virtual machines.
+
+### Question 46
+* What provides recommendations to reduce the cost of Azure resources?
+	* **Azure Advisor**
+
+Azure Advisor analyzes the account usage and makes recommendations based on its set and configured rules.
+
+### Question 47
+* Which Azure service evaluates Azure resources and makes recommendations to help improve reliability, security, performance, and cost reduction?
+	* **Azure Advisor**
+
+Azure Advisor evaluates Azure resources and makes recommendations to help improve reliability, security, and performance, achieve operational excellence, and reduce costs.
+
+### Question 48
+* What should you proactively review and act on to avoid service interruptions, such as service retirements and breaking changes?
+	* **health advisories**
+
+Health advisories are issues that require that you take proactive action to avoid service interruptions, such as service retirements and breaking changes. Service issues are problems such as outages that require immediate actions.
+
+### Question 49
+* What can you use to automatically detect performance anomalies for web apps?
+	* **Azure Application Insights**
+
+Application Insights is a feature of Azure Monitor that allows you to monitor running applications, automatically detect performance anomalies, and use built-in analytics tools to see what users do on an app.
+
+### Question 50
+* What can you use to get notification about an outage in a specific Azure region?
+	* **Azure Service Health**
+
+Service Health notifies you of Azure-related service issues, such as region-wide downtime.
