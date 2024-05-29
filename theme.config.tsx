@@ -53,7 +53,7 @@ const config: DocsThemeConfig = {
         </a>
         {' '}
         |{' '}
-        <a href="https://status.mcelwain.me" target="_blank">
+        <a href="https://stats.mcelwain.me" target="_blank">
           Status
         </a>
       </span>
