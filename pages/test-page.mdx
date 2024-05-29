@@ -1,4 +1,6 @@
 import { Callout } from 'nextra-theme-docs'
+import { Cards, Card } from 'nextra/components'
+import { CardsIcon, OneIcon, WarningIcon } from '../../icons'
 
 ## Callout
 <Callout type="info" emoji="ℹ️">
@@ -12,3 +14,10 @@ import { Callout } from 'nextra-theme-docs'
 <Callout type="error" emoji="️🚫">
   This is a dangerous feature that can cause everything to explode.
 </Callout>
+
+## Cards
+<Cards>
+  <Card icon={<WarningIcon />} title="Callout" href="/docs/guide/built-ins/callout" />
+  <Card icon={<CardsIcon />} title="Tabs" href="/docs/guide/built-ins/tabs" />
+  <Card icon={<OneIcon />} title="Steps" href="/docs/guide/built-ins/steps" />
+</Cards>
