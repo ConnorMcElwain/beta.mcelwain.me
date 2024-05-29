@@ -1,8 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
-import { Callout } from 'nextra/components'
-import { Cards, Card } from 'nextra/components'
 
 const config: DocsThemeConfig = {
   banner: {
