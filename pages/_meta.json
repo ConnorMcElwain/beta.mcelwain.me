@@ -30,7 +30,6 @@
      },
      "experience": {
       "title": "Experience",
-      "type": "page",
       "href": "/experience",
       "display": "hidden",
       "newWindow": false
