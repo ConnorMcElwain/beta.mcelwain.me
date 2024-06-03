@@ -25,13 +25,15 @@
         "title": "About Me",
         "type": "page",
         "href": "/about",
+        "display": "hidden",
         "newWindow": false
      },
-     "Experience": {
+     "experience": {
       "title": "Experience",
       "type": "page",
       "href": "/experience",
-      "newWindow": true
+      "display": "hidden",
+      "newWindow": false
     },
       "resume": {
         "title": "Resume",
