@@ -27,6 +27,12 @@
         "href": "/about",
         "newWindow": false
      },
+     "Experience": {
+      "title": "Experience",
+      "type": "page",
+      "href": "/experience",
+      "newWindow": true
+    },
       "resume": {
         "title": "Resume",
         "type": "page",
