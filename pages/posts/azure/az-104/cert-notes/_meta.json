@@ -2,5 +2,6 @@
     "chapter1": "Chapter 1 - Welcome to the Course",
     "chapter2": "Chapter 2 - Azure Administration",
     "chapter3": "Chapter 3 - Governance and Compliance",
-    "chapter4": "Chapter 4 - Identity"
+    "chapter4": "Chapter 4 - Identity",
+    "chapter5": "Chapter 5 - Role-Based Access Control"
   }
