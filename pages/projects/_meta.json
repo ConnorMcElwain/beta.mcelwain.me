@@ -1,6 +1,3 @@
 {
-    "homelab": "Home Lab",
-    "adlab": "Active Directory Home Lab",
-    "rack-overview": "Rack Overview",
-    "unraid-server": "Unraid Server"
+    "homelab": "Home Lab"
 }
