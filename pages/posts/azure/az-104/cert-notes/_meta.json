@@ -4,5 +4,7 @@
     "chapter3": "Chapter 3 - Governance and Compliance",
     "chapter4": "Chapter 4 - Identity",
     "chapter5": "Chapter 5 - Role-Based Access Control",
-    "chapter6": "Chapter 6 - Azure Storage"
+    "chapter6": "Chapter 6 - Azure Storage",
+    "chapter7": "Chapter 7 - Virtual Networking",
+    "chapter8": "Chapter 8 - Intersite Connectivity"
   }
