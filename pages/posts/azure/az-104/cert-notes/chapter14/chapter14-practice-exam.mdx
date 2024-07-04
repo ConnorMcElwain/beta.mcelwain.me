@@ -507,6 +507,7 @@ The pricing for a Standard load balancer is based on the number of rules configu
 | VM1  | 65.74.185.47 | 192.1.0.4 |  VNET1   | consilium.com |
 | VM2  | 47.185.85.63 | 10.1.0.4  |  VNET2   |  axiodata.com |
 | VM3  | 66.166.78.43 | 192.1.0.5 |  VNET1   | consilium.com |
+
 * You create a public DNS zone named consilium.com and a private DNS zone named axiodata.com In the settings for the private DNS zone, you create a virtual network link to VNET2 and enable auto registration. What will happen to VM2 when it starts up?
 	* A record for VM2 will be added to the consilium.com DNS zone
 	* **A record for VM2 will be added to the axiodata.com DNS zone**
