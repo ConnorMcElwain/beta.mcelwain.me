@@ -327,7 +327,7 @@ You are accessing Azure from Computer1 with the Azure CLI installed; therefore, 
 In order for traffic to flow from the VNet-Spoke to VNet-Hub, you will need a peered connection between the virtual networks. You can configure a NAT rule on the Azure Firewall to translate and filter inbound internet traffic to your subnets.
 
 ### Question 36
-* The Consilium Company has just deployed a number of Azure VMs into a specific subnet in an Azure virtual network. They also want to deploy and configure Azure Firewall, as part of a network security plan. From those newly deployed VMs, the company wants to deny access to the website [https://www.microsoft.com](https://www.microsoft.com/). What are the necessary steps and best ways to achieve this using the Azure resources the company is planning to implement?
+* The Consilium Company has just deployed a number of Azure VMs into a specific subnet in an Azure virtual network. They also want to deploy and configure Azure Firewall, as part of a network security plan. From those newly deployed VMs, the company wants to deny access to the website microsoft.com. What are the necessary steps and best ways to achieve this using the Azure resources the company is planning to implement?
 	* A VPN gateway
 	* **A route via Route Table to the firewall (as a virtual appliance hop)**
 	* **A subnet named `AzureFirewallSubnet`**
@@ -335,7 +335,7 @@ In order for traffic to flow from the VNet-Spoke to VNet-Hub, you will need a pe
 	* An Application Gateway
 	* A network security group rule
 
-A default route to 0.0.0.0/0 with the virtual appliance private IP as a next hop is required to direct any outgoing connections through the firewall. In order to deploy and configure an Azure Firewall, you must have a subnet created named `AzureFirewallSubnet`. An application rule allows or blocks an address by URL. This is necessary in order to block [https://www.microsoft.com](https://www.microsoft.com/) according to the requirements of the company.
+A default route to 0.0.0.0/0 with the virtual appliance private IP as a next hop is required to direct any outgoing connections through the firewall. In order to deploy and configure an Azure Firewall, you must have a subnet created named `AzureFirewallSubnet`. An application rule allows or blocks an address by URL. This is necessary in order to block microsoft.com according to the requirements of the company.
 
 ### Question 37
 * You have decided that you want to create 2 AKS clusters. Each of the clusters has different networking requirements. ClusterAlpha needs each pod to have a private IP address. ClusterBravo requires that each node has a private IP address. Which of the following options would you select for a networking configuration that satisfies the requirements of ClusterBravo?
