@@ -372,3 +372,213 @@ The `az acr build` command will build and push your image to an Azure Containe
 	* **`Set-AzContext -SubscriptionName`**
 
 In Az PowerShell 3.7.0, 'Get-AzContext' gets the metadata used to authenticate Azure Resource Manager requests. In Az PowerShell 3.7.0, `Set-AzContext` sets the tenant, subscription, and environment for cmdlets to use in the current session.
+
+### Question 41
+* You have created an application named ContainerApp1 that is to be run on Linux containers. You've created an Azure container instance with an FQDN, but you notice that when the container restarts, all application data is lost. What is the best solution to preserve the data associated with your application?
+	* Create a storage account and share the SAS with the application
+	* Run the container on a VM, and use the managed disk attached to the VM
+	* **Mount an Azure file share as a volume in Azure Container Instances**
+	* Create a public blob storage container and share the URI with the application
+
+Azure Container Instances can mount an Azure file share created with Azure Files. Azure Files offers fully managed file shares hosted in Azure Storage that are accessible via Server Message Block (SMB) protocol. Using an Azure file share with Azure Container Instances provides file-sharing features similar to using an Azure file share with Azure virtual machines.
+
+### Question 42
+* You have two Azure virtual machines named VM1 and VM2. VM1 is using the Red Hat Enterprise Linux 8.1 (LVM) operating system and is located in VNet1, within subnet1. VM2 is using the Windows Server 2019 operating system and is located in VNet1, within subnet2. VNet1 has custom DNS configured, pointing to a DNS server with the IP address 172.168.0.6. VM2 has 10.0.1.15 configured as the DNS server on its network interface. Which DNS server will VM2 use for DNS queries?
+	* 8.8.8.8
+	* 172.168.0.6
+	* 10.0.1.15 for primary, 172.168.0.6 as secondary
+	* **10.0.1.15**
+
+Since the network interface attached to VM2 is assigned to a specific DNS server, it takes precedence over the DNS configured on the VNet.
+
+### Question 43
+* You have a subscription named Subscription1. You create a new Azure VM in your subscription named VM5 running Windows 2012 R2. You try to connect and login to VM5, but you get an error that says, "We couldn't connect to the remote PC. Make sure the PC is turned on and connected to the network, and that remote access is enabled." You have verified that VM5 is running and has been assigned a public IP address. What change do you need to make in order to successfully connect and log in to VM5?
+	* Access the VM from a computer that is in the same subnet
+	* Select _Reset password_ from the VM blade
+	* **Add a rule to the network security group that will allow port 3389**
+	* Use Network Watcher for detailed connection tracing
+
+A network security group (NSG) is designed to filter traffic to and from Azure resources, including Azure VMs. Allowing port 3389 from your machine to the Azure VM will address the connection issue.
+
+### Question 44
+* You have an Azure subscription with a virtual machine named VM1. You are using a Recovery Services vault (RSV) to back up VM1 with soft delete enabled. The backup policy is set to back up daily at 11 PM UTC, retain an instant recovery snapshot for 2 days, and retain the daily backup point for 14 days. After the initial backup of VM1, you are instructed to delete the vault and all of the backup data. What should you do?
+	* Wait 15 days before deleting the data
+	* **Turn off soft delete in the vault security settings**
+	* Wait 14 days before deleting the data
+	* Delete the backup policy
+	* Delete Backup Jobs Workload
+	* **Stop the backup of VM1 and delete backup data**
+
+When you stop the backup and delete the backup data, because you have soft delete enabled, the backup data is still kept. Permanently deleting the soft-deleted backup items would remove the backup data indefinitely. If you stop the backup of VM1 and choose **Delete backup data** from the dropdown menu, this will stop future backups and delete the existing backup data.
+
+### Question 45
+* In your organization, you have a subscription with 3 resource groups. You are trying to track the costs of resources by department, but every department uses resources from each resource group. How can you best enable the organization to track the costs of its resources?
+	* **Assign tags to each resource**
+	* Assign tags to each resource group
+	* Filter cost analysis by resource groups
+	* Create resource locks for each resource
+
+Assigning tags to each resource in the subscriptions allows you to filter when performing cost analysis.
+
+### Question 46
+* VM1 is located in the East US region. You have added a Premium SSD data disk to VM1, but the IOPS are not satisfying the needs of your application. How can you change the speed of the disk?
+	* Create a new disk and migrate the data.
+	* Shut down (deallocate) the VM.
+	* **Select the disk configuration and increase the size.**
+	* Export the disk and convert to VHD.
+
+Once you've selected a size, then select a different performance tier to change its performance. A disk's performance tier can be changed without downtime, so you don't have to deallocate your VM or detach your disk to change the tier.
+
+### Question 47
+* You have finished implementing a backup solution for your company's VMs. You have created an Azure Recovery Services vault and a backup policy. You have configured Azure Backup, registering your VMs as backup items in the Recovery Services vault. You have created a recovery plan for performing mass backup operations on multiple VMs. Now you want to enable logging for restore and backup operations, so that you can understand our storage consumption over time. Which of the following would you do to implement this solution?
+	* View backup jobs in the Recovery Services vault
+	* Enable VM insights for your virtual machines
+	* **Create a Log Analytics workspace**
+	* Configure Site Recovery
+	* **Configure diagnostic settings for Recovery Services vault**
+
+Creating a Log Analytics workspace is a necessary step in implementing logging for backup operations. In order to use your Log Analytics workspace, you must enable diagnostic settings and stream your backup operations into the Log Analytics workspace.
+
+### Question 48
+* You have been directed to copy all data from one storage account to another using the AzCopy tool. You need to report which storage services you can copy. Which of those services would it be?
+	* **Azure Blob and File Shares**
+	* Only Azure File Shares
+	* Azure Queues and Blobs
+	* Azure Table and File Shares
+
+AzCopy is a command-line utility that you can use to copy blobs or files to or from a storage account.
+
+### Question 49
+* You have created a virtual machine that has a NIC with a dynamically assigned private IP. You want to provide public connectivity to this virtual machine. How could you accomplish this?
+	* Modify the NIC configurations to make the private IP assignment static
+	* Create a public IP address
+	* **Create a public IP address and associate it with the NIC of the VM**
+	* Create a new NIC for the virtual machine
+
+By creating a public IP address for your VM and associating it with the NIC, you can use it to provide public connectivity to the VM.
+
+### Question 50
+* VM1 is located in the West US region and the OS disk is Premium SSD. The size of VM1 is currently Standard_D2s_v3, but you need to change the size to Standard_D2. You are able to select the size from the Size blade, but you receive an error message. Why can't you change the VM size?
+	* You need to provide the username and password for the OS to upgrade
+	* **Standard_D2 does not support Premium SSD Managed Disks**
+	* You did not shut down (deallocate) VM1 before you changed the size
+	* The size Standard_D2 is not available in the West US region
+
+Standard_D2 does not support Premium SSD Managed Disks; therefore, you are unable to change VM1 to this size. A good way to remember which size is available is the `s` in the size, as the `s` indicates Premium SSD. See more about [Dv3 and Dsv3-Series](https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series).
+
+### Question 51
+* You work as an Azure Administrator for a film production company. The company stores all of its video clips in file servers on-premises. You are curious about extending the capacity of these on-premises file servers. What Azure Storage services could you utilize to ensure that these on-premises file servers are supported in this way?
+	* Azure Queue
+	* **Azure File Sync**
+	* Azure Blob
+	* **Azure Files**
+
+Azure File Sync is a service provided by Microsoft Azure that allows organizations to centralize their files in Azure Files while maintaining compatibility and accessibility through their on-premises Windows Servers. Essentially, it gives you the benefits of having your files in the cloud while allowing you to use them like they're still on your local network. Azure Files and File Sync have to be used together to extend on-prem file shares into the cloud. Azure Files is a Microsoft Azure service that provides fully managed file shares that are accessible via the industry-standard Server Message Block (SMB) protocol. Azure Files and File Sync have to be used together to extend on-prem file shares into the cloud.
+
+### Question 52
+* Which of the following Azure services supports Azure Disk Encryption for your virtual machines?
+	* Azure Blob Storage
+	* Azure Backup
+	* Azure File Sync
+	* **Azure Key Vault**
+
+Azure Key Vault support Azure Disk Encryption for your VMs by acting as the storage service for the encryption key used in disk encryption.
+
+### Question 53
+* You have an Azure subscription that contains the following unused resources:
+	- Network interface (nic0)
+	- Static public IP (pip1)
+	- Standard load balancer (lb1) with 5 rules configured
+	- Virtual network (VNet2) = 10.1.0.0/16
+- Stopped (deallocated) virtual machine (VM3) Which of these unused resources should you remove to lower cost?
+		- **Standard load balancer (lb1)**
+		- Stopped (deallocated) virtual machine (VM3)
+		- Network interface (nic0)
+		- **Static public IP (pip1)**
+		- Virtual network (VNet2)
+
+The pricing for a Standard load balancer is based on the number of rules configured (load balancer rules and NAT rules) and data processed. However, there is no hourly charge for the Standard load balancer itself when no rules are configured. Since this load balancer contains rules, it should be removed to save money. There is a charge for static public IP addresses irrespective of the associated resource (unless it is part of the first five static ones in the region), so this resource should be removed. [Pricing Virtual Machine IP Address Options](https://azure.microsoft.com/en-au/pricing/details/ip-addresses/)
+
+### Question 54
+* You have an Azure subscription that contains 3 virtual machines that run Windows Server 2016 and are configured as follows:
+
+| Name |   PublicIP   | PrivateIP | VNetName |     DNSSuffix |
+| :--- | :----------: | :-------: | :------: | ------------: |
+| VM1  | 65.74.185.47 | 192.1.0.4 |  VNET1   | consilium.com |
+| VM2  | 47.185.85.63 | 10.1.0.4  |  VNET2   |  axiodata.com |
+| VM3  | 66.166.78.43 | 192.1.0.5 |  VNET1   | consilium.com |
+
+* You create a public DNS zone named consilium.com and a private DNS zone named axiodata.com In the settings for the private DNS zone, you create a virtual network link to VNET2 and enable auto registration. What will happen to VM2 when it starts up?
+	* A record for VM2 will be added to the consilium.com DNS zone
+	* **A record for VM2 will be added to the axiodata.com DNS zone**
+	* A record for VM2 will be added to the axiodata.com DNS zone only once you configure the DNS servers for VNET2
+	* A record for VM2 will be added to both consilium.com and axiodata.com
+
+Any existing virtual machines and any new VMs added to VNET2 will be auto registered and a record will be added in the axiodata.com DNS zone.
+
+### Question 55
+* You work for a company that provides a streaming service for entertainment purposes. You have been storing your video files on-premises in storage servers. Your CTO has advised you that the company is migrating to the cloud, and you have been tasked with investigating which service best fits the organization's use case. You are looking for a service that allows the company to save cost by utilizing lifecycle management. Which of the following Azure services would you select to store these video files for streaming?
+	* **Azure Blob**
+	* Azure Tables
+	* Azure Queue
+	* Azure Files
+
+Azure Blob storage is an object-based storage solution designed to store block blobs such as video files, and Blob storage supports lifecycle management features for cost savings.
+
+### Question 56
+* The lead infrastructure engineer on your IT team has reached out to you as a cloud engineer to investigate a backup solution for your Azure VMs. You have already begun implementing a solution by first creating an Azure Recovery Services vault. Which of the following would you do next to implement a backup solution?
+	* **Create a backup policy**
+	* Take your first VM backup
+	* Configure a recovery plan
+	* Enable Site Recovery
+
+Since you have already created a Recovery Services vault, the next logical step is to configure the backup policy for the backup solution.
+
+### Question 57
+* Which of the following can you encrypt with Azure Disk Storage Server-Side Encryption?
+	* Temporary disks and OS disks
+	* Only data disks
+	* **OS disks and data disks**
+	* Data disks and temporary disks
+
+Azure Disk Storage Server-Side Encryption (SSE) (also referred to as encryption-at-rest or Azure Storage encryption) is always enabled and automatically encrypts data stored on Azure managed disks. This includes both OS and data disks when they are persisted on storage clusters.
+
+### Question 58
+* You have 2 virtual networks named VNet1 and VNet2. VNet1 is located in the West US region, whereas VNet2 is located in the East US region. You need to configure a virtual machine that's located in VNet1 to also communicate with VMs in VNet2. From the choices available, how can you enable communication between resources in VNet1 and VNet2?
+	* **Configure a VNet-to-VNet VPN gateway connection to allow communication between VNets in different regions**
+	* Migrate just the VM disks to VNet2
+	* Migrate the VNet1 VM to VNet2 and leave the other VM components on VNet1
+	* Migrate the network interface card (NIC), the network security group (NSG), and the VM disks to VNet2
+
+VNet-to-VNet connections allow communication between virtual networks in different regions and from different subscriptions. [Configure a VNet-to-VNet VPN Gateway Connection by Using the Azure Portal](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal).
+
+### Question 59
+* You have created a new Azure virtual machine in a subnet named Subnet1 with an attached network interface card named NIC1. The NIC1, attached to Subnet1, has the following effective routes:
+
+|Source|State|Address Prefix|Next Hop|
+|:--|:-:|:-:|--:|
+|Default|Active|10.1.0.0/16|Virtual Network|
+|Default|Invalid|0.0.0.0/0|Internet|
+|Default|Active|10.0.0.0/8|None|
+|Default|Active|100.64.0.0/10|None|
+|Default|Active|192.168.0.0/16|None|
+|Default|Active|25.33.80.0/20|None|
+|Default|Active|25.41.3.0/25|None|
+|User|Active|0.0.0.0/0|None|
+
+* What will happen when the virtual machine tries to communicate with a VM on a different network?
+	* Traffic will be forced out to the internet
+	* Traffic will be forced internally
+	* Traffic will be sent successfully
+	* **Traffic will be dropped and no connection will be established**
+
+The user-defined route with a Next Hop type of None in the table will override the default route, causing traffic to be directed to nowhere and the connection to be dropped.
+
+### Question 60
+* You have an Azure subscription named Subscription1. You have created a web app named App1 in Subscription1 that is sourced from a Git repository named Git1. You need to ensure that every commit to the master branch in Git1 triggers a deployment to a test version of the application before releasing it to production. What are two changes that you must make to App1 to fulfill this requirement?
+	* Create a new web app and configure failover settings from test to production
+	* **Add a new deployment slot to App1 to release the test version of App1**
+	* **Create a build server with the master branch of Git1 as the trigger**
+	* Configure custom domains for test and production versions of App1
+
+Deployment slots allow greater flexibility within app services, providing a built-in staging environment for your app and access to your application without deploying it to production. You have the option of creating a build server natively in App Services by selecting _Deployment Center_ in the App1 blade. This will trigger a build every time a commit is made to the master branch of Git1.
