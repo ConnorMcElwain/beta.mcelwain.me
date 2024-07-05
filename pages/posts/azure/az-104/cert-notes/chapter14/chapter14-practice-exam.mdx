@@ -8,3 +8,185 @@
 * Configure and Manage Azure Networking Services (32%)
 * Monitor and Backup Azure Resources (12%)
 
+### Question 1
+* You have a subscription named Subscription1. Subscription1 has one Azure virtual machine named VM1 which is an Ubuntu server. You can't seem to login to the server via SSH. What tool should you use to verify if the problem is the network security group?
+	* Azure Traffic Manager traffic view
+	* **IP flow verify tool in Azure Network Watcher**
+	* Azure Virtual Network logs
+	* Azure Monitor VM metrics
+
+The IP flow verify tool checks if a packet is allowed or denied to or from a virtual machine. The information consists of direction, protocol, local IP, remote IP, local port, and a remote port. If the packet is denied by a security group, the name of the rule that denied the packet is returned.
+
+### Question 2
+* You have two virtual networks, VNet1 and VNet2. VNet 1 has an IP CIDR of 10.0.0.0/16, and VNet2 has an IP CIDR of 192.168.0.0/16. You want to be able to communicate between these virtual machines privately over the Microsoft backbone. Which of the following could you use to accomplish this without transitivity to other potentially peered networks?
+	* VPN gateway
+	* Azure WAN
+	* **VNet peering**
+	* ExpressRoute
+
+VNet peering can be configured between these VNets with non-overlapping IP CIDRs. Once the peering connections are created on both sides of the peering, these VNets will be able to communicate privately without transitivity to potentially peered networks.
+
+### Question 3
+* Your company has decided to use virtual machines as the compute resource for hosting the organization's latest application. To do so, you need to have storage on the virtual machine that provides persistent storage. Which of the following options would you use?
+	* Containers
+	* Temporary disk
+	* OS disk
+	* **Data disk**
+
+Data disks are managed disks that can be added to existing VMs and used for persistent storage. The data stored on a data disk survives a VM that has been deallocated and can be moved to other VMs.
+
+### Question 4
+* Which of the following Network Watcher tools could you use to investigate all traffic between VM1 and VM2 for a duration of 3 hours?
+	* IP flow verify
+	* VPN diagnostics
+	* **Packet capture**
+	* Connection troubleshoot
+
+The packet capture tool can be used to investigate all traffic between VM1 and VM2 for a duration of time.
+
+### Question 5
+* You work at the IT help desk for Consilium Corporation. You have been getting an influx of calls into the help desk about resetting users' passwords. They keep reporting that they can't seem to figure out how to reset their password in order to gain access to their Customer Relationship Management (CRM) software. What do you do?
+	* **Issue a document to inform users of password reset procedure.**
+	* **Ensure that the users who are having problems are within the correct AD group.**
+	* **Make sure they have their verification device (mobile app or access to email).**
+	* Make sure you have Azure Active Directory Free.
+	* **Verify that self-service password reset is enabled in Azure Active Directory.**
+
+If the Active Directory users are not authorized to reset their password, or the Active Directory environment is not suited for this functionality (e.g. licensing), the document in of itself may not help in this situation, but it is a good start. Good communication is a good idea, but also make sure the users can use self-service in Azure Active Directory. Self-service password may not apply to those outside of a specific Active Directory group. Only users in the group may reset their own passwords. In order to reset their password, the user will have to verify their identity using a mobile phone, mobile app, office phone or email. Self-service password reset is an optional feature in Azure Active Directory, which may not apply to all users in the organization.
+
+### Question 6
+* You need to create an Azure virtual machine named VM1 that requires a static private IP address configured inside the IP address space for the VNet in which the VM resides. How do you configure a static IP address for this Azure VM?
+	* **After the VM has been created, go to the network interface attached to the VM and change the IP configuration to static assignment.**
+	* After the VM has been created, create a new network interface and configure a static IP address for that network interface.
+	* When creating the VM in the portal, change the setting from **dynamic** to **static** on the _Networking_ tab under _Private IP Address_.
+	* When creating a VM in the portal, select **New** next to _Private IP Address_ and choose **static** after assigning the correct IP address.
+
+Changing the IP configuration on the network interface will achieve this goal.
+
+### Question 7
+* Which of the following is required to implement Azure Disk Encryption on virtual machines data disks and OS disks?
+	* SSH private keys
+	* Access keys
+	* **Azure Key Vault**
+	* Shared access signature (SAS) tokens
+
+Azure Key Vault is a required resource when implementing Azure Disk Encryption. Azure Key Vault stores the encryption key for Azure Disk Encryption.
+
+### Question 8
+* You are the Azure Administrator working for CloudMotive Inc. and you have been tasked with ensuring proper access permissions for all Azure AD users. Adam is the Solutions Architect for the Marketing team. All of the resources for the Marketing team are within the MarketingRG resource group. You need to provide access for Adam to manage all resources at the MarketingRG scope. Which of the following built-in roles would you assign to Adam to provide access to manage all resources in the MarketingRG resource group without providing Adam the ability to create role assignments for MarketingRG?
+	* Resource Group Manager
+	* **Contributor**
+	* User Access Administrator
+	* Owner
+
+The Contributor role would be the best solution for providing Adam with the permissions to manage all resources in the MarketingRG resource group, without giving Adam the permissions to make role assignments.
+
+### Question 9
+* You have just purchased the domain name arseemagroup.com from a third-party registrar. Using your Azure Active Directory domain, you'd like to create new users with the suffix @arseemagroup.com. Which 3 things must you do?
+	* **Verify that you own the domain name**
+	* **Create an MX or TXT record for the arseemagroup.com DNS**
+	* **Access the Custom Domain Names blade from Azure AD**
+	* Access the App registrations blade from Azure AD
+
+When you add your custom domain to Azure AD, you must verify that this domain belongs to you by going through a verification process. Azure AD will provide the verification information. When you add your custom domain to Azure AD, you must create an MX or TXT record with a destination address (provided) in order to verify that the domain does indeed belong to you. In order to add the domain arseemagroup.com to Azure AD, you must add it from the Custom Domain Names blade.
+
+### Question 10
+* In your subscription, there are four different resource groups: RG1, RG2, RG3, and RG4. RG2 has a Read-Only lock at the resource group scope. RG3 has a Delete lock at the resource group scope. RG1 and RG4 do not have locks. You need to determine how to move resources between resource groups during the lifecycle of these resources. Assuming all resources provisioned support moving between resource groups regardless of region, which of the following statements are plausible?
+	* You can move resources from RG2 to RG3.
+	* You can move resources between any of these resource groups.
+	* **You can move resources from RG1 to RG4.**
+	* You can move resources from RG2 to RG4.
+	* **You can move resources from RG4 to RG3.**
+
+You can effectively move resources from RG1 and RG4, because RG1 does not have a lock. You can move resources from RG4 and RG3, because RG4 does not have a lock. Also, while RG3 does have a Delete lock ,this does not stop resources from being moved into this resource group.
+
+### Question 11
+* You have a network security group (NSG) that is associated with a network interface that is attached to an Azure virtual machine named VM1 running Windows Server 2019. VM1 is in subnet named subnet1, in a virtual network named VNet1. A different NSG is attached to subnet1, but you notice that there is an inbound rule to allow port 3389. When you try to connect to VM1, you cannot connect. You reviewed the NSG and the source IP address and the protocol are correct. Which action should you take according to best practices for NSGs in Azure?
+	* **The NSG attached to the network interface needs to be removed**
+	* The protocol on the NSG rule is set to UDP
+	* The source IP address on the NSG rule is incorrect
+	* An inbound rule for the NSG attached to the network interface needs to be added
+
+The optimal action is to remove the network security group (NSG) attached to the network interface of the virtual machine. NSG rules applied to both the subnet and the network interface can cause rule conflicts, with the more restrictive rule overriding the other. By removing the NSG from the network interface, the virtual machine can use the NSG associated with the subnet, which simplifies network management and minimizes complexity. That being said, there are situations where applying an NSG to a network interface might be necessary for more granular control of traffic, especially when specific security requirements for a particular VM within the subnet exist, but such usage should be carefully considered due to the extra management complexity it introduces.
+
+### Question 12
+* You have an Azure subscription named Subscription1. In Subscription1, you have an Azure virtual machine named VM1, which uses the "Standard_A2_v2" size. Attached to VM1 are two network interface cards. You require a third network interface card with a network bandwidth above 1000 Mbps for your storage area network. What should you do?
+	* Create a new subnet with a sufficient number of available IP addresses
+	* Create an additional VM in the same subnet and connect to VM1 over the LAN
+	* Create a new storage account to store data for VM1
+	* **Change the VM SKU to Standard_A4 or larger**
+
+The larger SKUs for Azure virtual machines allow for an increased number of NICs. [Av2-series](https://docs.microsoft.com/en-us/azure/virtual-machines/av2-series).
+
+### Question 13
+* You have an Azure Kubernetes Service (AKS) cluster named AKS1 within the resource group named RG1. You are trying run the command `kubectl get all` from the Azure Cloud Shell to view your cluster resources. You received the error, `Error from server (BadRequest): the server rejected our request for an unknown reason`. You've verified that the resources exist and the command is correct. What do you need to do in order to view your cluster resources from the Azure Cloud Shell?
+	* Log in to the cluster GUI from the Azure portal
+	* Access the Kubernetes Dashboard using the command `az aks browse --name AKS1 --resource-group RG1`
+	* Install the kubectl tool
+	* **Retrieve the access credentials using the command `az aks get-credentials --name AKS1 --resource-group RG1`**
+
+The kubeconfig is required in order to access the Kubernetes API. You can retrieve the kubeconfig using the `az aks get-credentials` command.
+
+### Question 14
+* You are a contracting Solutions Architect for an organization seeking a solution for migrating data into Azure Blob. The organization has very low network bandwidth, which they discovered by attempting to copy files over using AzCopy. They require a better way of moving large amounts of data into Azure. Which of the following provides the best solution for this task?
+	* **Import job using organization supplied drives**
+	* Upload files using the Azure portal from on-premises
+	* Copy files over using Azure Storage Explorer
+	* **Import job with Microsoft supplied drives**
+
+An import job could be used to migrate data via ground transport into Azure Blob storage as long as you supply the drives for the job. Import jobs would meet the organization's data migration needs. Import jobs are also possible with Microsoft supplied drives. If you want to transfer data using disk drives supplied by Microsoft, you can use Azure Data Box Disk.
+
+### Question 15
+* Your company wants to implement a load balancing solution in Azure that provides a 99.99% SLA, but it also wants to minimize costs. Which of the following in combination would provide the most appropriate, cost effective solution?
+	* **Standard Load Balancer**
+	* Basic Load Balancer
+	* **Backend pool of 2 virtual machines**
+	* Standard Application Gateway
+	* Backend pool of 1 virtual machine
+
+Standard Load Balancers provide a 99.99% SLA, whereas Basic Load Balancers do not. A backend pool with 2 virtual machines, when implemented with a Standard Load Balancer, would provide the 99.99% SLA.
+
+### Question 16
+* You have an Azure load balancer that has a backend pool consisting of 2 virtual machines. The load balancer balances traffic over port 80 for the backend pool. You need to be able to make an SSH connection into virtual machines in the backend pool. How can you achieve this?
+	* Create an internal load balancer for the virtual machines
+	* Configure a health probe
+	* **Create an inbound NAT rule for each VM that you want to be able to connect to.**
+	* Create a new load balancing rule
+
+Creating inbound NAT rules on the load balancer will allow you to make a connection to VMs in the backend pool using the public IP of the load balancer.
+
+### Question 17
+* You have a subscription named Subscription1. Subscription1 has two virtual networks named VNet1 and VNet2 in two different resource groups. VNet1 is located in the West US region and VNet2 is located in the East US region. You need to apply a network security group named NSG1 to a subnet in VNet1. NSG1 is located in the East US region. How do you attach NSG1 to the subnet in VNet1?
+	* Move VNet1 into a resource group located in the East US region
+	* **You can not attach NSG1 to the subnet in VNet1. Create a new network security group in the West US region**
+	* Move NSG1 into the VNet1 resource group
+	* Select the subnet and choose NSG1 from the network security group drop-down
+
+In order for you to associate a network security group to a subnet, both the virtual network and the network security group must be in the same region.
+
+### Question 18
+* You have a standard load balancer that directs traffic from port 80 externally to 3 different virtual machines. You need to direct all incoming TCP traffic on port 5000 to port 22 internally for connecting to Linux VMs. What do you need in order to connect to the VM via SSH?
+	* A public IP address for all 3 VMs
+	* **A Network Address Translation (NAT) rule**
+	* A route table with at least one rule
+	* **A network security group (NSG)**
+
+NAT rules work alongside NSG rules to provide a connection to a VM that's behind a load balancer. The NSG rules work alongside the NAT rules to provide a connection to a VM that's behind a load balancer.
+
+### Question 19
+* You are using Azure VMs to host a critical user-facing application. You want to ensure that you have a backup solution prepared for the VM. Which of the following steps would you take first in setting up a backup solution?
+	* Configure a recovery plan
+	* Configure Azure Backup
+	* Create a backup policy
+	* **Create a Recovery Services vault**
+
+The very first step in setting up a backup recovery solution is creating Recovery Services vault.
+
+### Question 20
+* You have a general-purpose v1 storage account named `consiliumstore` that has a private container named `container2`. You need to allow read access to the data inside `container2`, but only within a 14 day window. How do you accomplish this using the Azure portal?
+	* Create a service shared access signature (SAS)
+	* Upgrade the storage account to general-purpose v2
+	* **Create a shared access signature (SAS)**
+	* **Create a stored access policy**
+
+A shared access signature (SAS) allows you to have granular control over your storage account, including access to only certain services (i.e. Azure Blobs) and permitting only read, write, delete, list, add, or create access. A stored access policy allows granular control over a single storage container using a shared access signature (SAS).
