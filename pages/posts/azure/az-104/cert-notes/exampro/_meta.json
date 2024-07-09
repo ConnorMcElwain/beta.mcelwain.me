@@ -1,5 +1,6 @@
 {
     "chapter1": "Chapter 1 - Introduction",
     "chapter2": "Chapter 2 - Azure Active Directory (Entra ID)",
-    "chapter3": "Chapter 3 - Device Management"
+    "chapter3": "Chapter 3 - Device Management",
+    "chapter4": "Chapter 4 - Azure Roles"
 }
