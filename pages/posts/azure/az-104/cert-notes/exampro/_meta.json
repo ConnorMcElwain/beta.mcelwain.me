@@ -4,5 +4,6 @@
     "chapter3": "Chapter 3 - Device Management",
     "chapter4": "Chapter 4 - Azure Roles",
     "chapter5": "Chapter 5 - Azure Policies",
-    "chapter6": "Chapter 6 - Azure Resource Manager"
+    "chapter6": "Chapter 6 - Azure Resource Manager",
+    "chapter7": "Chapter 7 - ARM Templates"
 }
