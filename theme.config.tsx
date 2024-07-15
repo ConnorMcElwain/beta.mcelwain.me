@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
     key: 'beta-release',
     text: (
       <a href="/posts/azure/az-104">
-        🔥 After completing the AZ-900, I have started documenting my journey towards aquiring the AZ-104 →
+        🔥 Check out my documented journey towards the AZ-104! →
       </a>
     )
   },
