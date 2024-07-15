@@ -6,8 +6,8 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'beta-release',
     text: (
-      <a href="/read-more">
-        🎉 McElwain.me is now in Beta! Read more →
+      <a href="/posts/azure/az-104">
+        🔥 After completing the AZ-900, I have started documenting my journey towards aquiring the AZ-104 →
       </a>
     )
   },
