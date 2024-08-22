@@ -23,16 +23,6 @@ const config: DocsThemeConfig = {
       }
     }
   },
-  chat: {
-    link: 'https://www.linkedin.com/in/connor-mcelwain/',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 248 204">
-        <path
-          
-        />
-      </svg>
-    )
-  },
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
   editLink: {
     component: null
@@ -55,6 +45,11 @@ const config: DocsThemeConfig = {
         |{' '}
         <a href="https://stats.mcelwain.me" target="_blank">
           Status
+        </a>
+        {' '}
+        |{' '}
+        <a href="/known-issues">
+          Known Issues
         </a>
       </span>
     )
