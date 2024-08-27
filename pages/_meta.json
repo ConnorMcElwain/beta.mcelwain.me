@@ -24,7 +24,7 @@
       "about-me": {
         "title": "About Me",
         "type": "page",
-        "href": "/about-me",
+        "href": "/about",
         "display": "hidden",
         "newWindow": false
      },
