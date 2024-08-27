@@ -21,20 +21,13 @@
     "title": "About",
     "type": "menu",
     "items": {
-      "about": {
+      "about-me": {
         "title": "About Me",
         "type": "page",
-        "href": "/about",
+        "href": "/about-me",
         "display": "hidden",
         "newWindow": false
      },
-     "experience": {
-      "title": "Experience",
-      "type": "page",
-      "href": "/experience",
-      "display": "hidden",
-      "newWindow": false
-    },
       "resume": {
         "title": "Resume",
         "type": "page",
