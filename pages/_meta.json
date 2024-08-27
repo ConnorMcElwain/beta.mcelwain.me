@@ -58,5 +58,10 @@
     "title": "Test Page",
     "display": "hidden",
     "newWindow": false
+  },
+  "known-issues": {
+    "title": "Known Issues",
+    "display": "hidden",
+    "newWindow": false
   }
 }
