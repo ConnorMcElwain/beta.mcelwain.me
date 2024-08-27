@@ -56,5 +56,10 @@
     "title": "Known Issues",
     "display": "hidden",
     "newWindow": false
+  },
+  "experience": {
+    "title": "Experience",
+    "display": "hidden",
+    "newWindow": false
   }
 }
