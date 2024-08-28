@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
     key: 'beta-release',
     text: (
       <a>
-        🔥 Check out my updated documentation on the <a href="/posts/azure/az-104">AZ-104</a> and my journey into learning <a href="/posts/microsoft/microsoft-endpoint-manager/mecm-notes">MECM!</a>
+        🔥 Check out my updated documentation on the <a href="/posts/azure/az-104"><b><u>AZ-104</u></b></a> and my journey into learning <a href="/posts/microsoft/microsoft-endpoint-manager/mecm-notes"><b><u>MECM!</u></b></a>
       </a>
     )
   },
