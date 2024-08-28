@@ -42,11 +42,6 @@
     }
     }
   },
-  "read-more": {
-    "title": "Read More",
-    "display": "hidden",
-    "newWindow": false
-  },
   "test-page": {
     "title": "Test Page",
     "display": "hidden",
@@ -54,11 +49,6 @@
   },
   "known-issues": {
     "title": "Known Issues",
-    "display": "hidden",
-    "newWindow": false
-  },
-  "experience": {
-    "title": "Experience",
     "display": "hidden",
     "newWindow": false
   }

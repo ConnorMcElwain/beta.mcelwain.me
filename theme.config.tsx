@@ -6,8 +6,8 @@ const config: DocsThemeConfig = {
   banner: {
     key: 'beta-release',
     text: (
-      <a href="/posts/azure/az-104">
-        🔥 Check out my documented journey towards the AZ-104! →
+      <a>
+        🔥 Check out my updated documentation on the <a href="/posts/azure/az-104">AZ-104</a> and my journey into learning <a href="/posts/microsoft/microsoft-endpoint-manager/mecm-notes">MECM!</a>
       </a>
     )
   },
