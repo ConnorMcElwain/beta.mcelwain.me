@@ -16,11 +16,13 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/ConnorMcElwain',
   },
   useNextSeoProps() {
-    return {
-      titleTemplate: 'Connor McElwain – beta'
+    const { asPath } = useRouter()
+    if (asPath !== '/') {
+      return {
+        titleTemplate: 'mcelwain.me – beta'
+      }
     }
-  }
-},
+  },
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
   editLink: {
     component: null
