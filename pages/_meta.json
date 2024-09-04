@@ -28,12 +28,14 @@
     "title": "Resume",
     "type": "page",
     "href": "/Resume.pdf",
+    "display": "hidden",
     "newWindow": true
 },
   "contact-me": {
     "title": "Contact Me",
     "type": "page",
     "href": "mailto:connor@mcelwain.me",
+    "display": "hidden",
     "newWindow": true
 },
   "test-page": {
