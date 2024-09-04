@@ -17,10 +17,10 @@
     "href": "/projects",
     "newWindow": false
 },
-  "about-me": {
-    "title": "About Me",
+  "experience": {
+    "title": "Experience Page",
     "type": "page",
-    "href": "/about",
+    "href": "/experience",
     "display": "hidden",
     "newWindow": false
 },
