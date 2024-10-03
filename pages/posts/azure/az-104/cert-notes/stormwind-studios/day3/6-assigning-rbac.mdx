@@ -42,18 +42,18 @@
 	* Resource
 * Management Group:
 	* This is the highest level of scope. Management groups allow you to organize subscriptions and apply policies across multiple subscriptions. Role assignments at this level apply to all subscriptions within the management group
-	* **Scope Path:** /providers/Microsoft.Management/managementGroups/{managementGroupName}
+	* **Scope Path:** `/providers/Microsoft.Management/managementGroups/{managementGroupName}`
 
 ### RBAC Scope
 * Subscription:
 	* Scopes at the subscription level apply to a specific Azure subscription
-	* **Scope Path:** /subscriptions/{subscriptionId}
+	* **Scope Path:** `/subscriptions/{subscriptionId}`
 * Resource Group:
 	* Resource groups provide a way to manage related resources within a subscription. Role assignments at the resource group level apply to all resources within that group
-	* **Scope Path:** /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}
+	* **Scope Path:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}`
 * Resource:
 	* The most specific level of scope, where you can assign roles directly to individual resources
-	* **Scope Path:** /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceType}/{resourceName}
+	* **Scope Path:** `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceType}/{resourceName}`
 
 ### End Topic: Azure Role-based Access Control (RBAC)
 * Role Definitions
