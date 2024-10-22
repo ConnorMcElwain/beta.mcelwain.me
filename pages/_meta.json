@@ -52,5 +52,10 @@
     "title": "Test Home Page",
     "display": "hidden",
     "newWindow": false
+  },
+  "test-experience": {
+    "title": "Test Experience Page",
+    "display": "hidden",
+    "newWindow": false
   }
 }
