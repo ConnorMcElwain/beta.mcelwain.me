@@ -3,12 +3,7 @@ import Link from '../components/Link';
 <section class="text-white">
   <div class="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:h-fit lg:items-center">
     <div class="mx-auto max-w-3xl text-center">
-      <h1
-        class="text-3xl font-extrabold sm:text-7xl"
-      >
-        Connor McElwain
-
-      </h1>
+      <h1 class="text-3xl font-extrabold sm:text-7xl">Connor McElwain</h1>
 
       <p class="mx-auto mt-5 max-w-2xl sm:text-xl">
         Thanks for checking out my website! I want to build this space to reflect my personal and professional goals, experiences, achievements, and more! I'm actively publishing previous and current <Link href="/projects">projects</Link> I'm working on and <Link href="/posts">documentation</Link> for certifications I have or will acquire.
@@ -30,76 +25,77 @@ import Link from '../components/Link';
           Experience Page
         </a>
 
-<!-- Contact Me Button -->
-<a
-  class="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-  href="#"
-  onclick="document.getElementById('contactModal').classList.remove('hidden');"
->
-  Contact Me
-</a>
-
-<!-- Modal for Contact Form -->
-<div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
-  <div class="bg-white rounded-lg max-w-md w-full p-6">
-    <h2 class="text-2xl font-bold mb-4 text-center">Contact Me</h2>
-
-    <form action="mailto:connor@mcelwain.me" method="POST" enctype="text/plain">
-      <div class="mb-4">
-        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
-          required
-        />
-      </div>
-
-      <div class="mb-4">
-        <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
-          required
-        />
-      </div>
-
-      <div class="mb-4">
-        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
-          required
-        ></textarea>
-      </div>
-
-      <div class="flex justify-between">
-        <button
-          type="submit"
-          class="block w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring"
+        <!-- Contact Me Button -->
+        <a
+          class="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+          href="#"
+          onclick="document.getElementById('contactModal').classList.remove('hidden');"
         >
-          Send
-        </button>
-        <button
-          type="button"
-          class="ml-4 block w-full bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring"
-          onclick="document.getElementById('contactModal').classList.add('hidden');"
-        >
-          Cancel
-        </button>
-      </div>
-    </form>
-      </div>
-    </div>
+          Contact Me
+        </a>
       </div>
     </div>
   </div>
+
+  <!-- Modal for Contact Form -->
+  <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg max-w-md w-full p-6">
+      <h2 class="text-2xl font-bold mb-4 text-center">Contact Me</h2>
+
+      <form action="mailto:connor@mcelwain.me" method="POST" enctype="text/plain">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
+            required
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
+            required
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
+            required
+          ></textarea>
+        </div>
+
+        <div class="flex justify-between">
+          <button
+            type="submit"
+            class="block w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring"
+          >
+            Send
+          </button>
+          <button
+            type="button"
+            class="ml-4 block w-full bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring"
+            onclick="document.getElementById('contactModal').classList.add('hidden');"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
+
 
 <span class="flex items-center">
   <span class="h-px flex-1 bg-white"></span>
