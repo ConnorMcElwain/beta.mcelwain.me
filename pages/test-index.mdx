@@ -1,88 +1,91 @@
-import Link from '../components/Link';
 import { useState } from 'react';
+import Link from '../components/Link';
 
-export default function Index() {
-  const [isContactModalOpen, setContactModalOpen] = useState(false);
+export default function TestIndex() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
-    <section className="text-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:h-fit lg:items-center">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl font-extrabold sm:text-7xl">Connor McElwain</h1>
-          <p className="mx-auto mt-5 max-w-2xl sm:text-xl">
-            Thanks for checking out my website! I want to build this space to reflect my personal and professional goals, experiences, achievements, and more! I'm actively publishing previous and current{' '}
-            <Link href="/projects">projects</Link> I'm working on and{' '}
-            <Link href="/posts">documentation</Link> for certifications I have or will acquire.
-          </p>
-
-          <div className="mt-4 flex flex-wrap justify-center gap-4">
-            <a
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              href="/Resume.pdf"
-              target="_blank"
-            >
-              Resume (PDF)
-            </a>
-
-            <a
-              className="block w-full rounded border border-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="/experience"
-            >
-              Experience Page
-            </a>
-
-            <button
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              onClick={() => setContactModalOpen(true)}
-            >
-              Contact Me
-            </button>
+    <>
+      <section className="text-white">
+        <div className="mx-auto max-w-screen-xl px-4 py-4 lg:flex lg:h-fit lg:items-center">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-3xl font-extrabold sm:text-7xl">Connor McElwain</h1>
+            <p className="mx-auto mt-5 max-w-2xl sm:text-xl">
+              Thanks for checking out my website! I want to build this space to reflect my personal and professional goals, experiences, achievements, and more! I'm actively publishing previous and current <Link href="/projects">projects</Link> I'm working on and <Link href="/posts">documentation</Link> for certifications I have or will acquire.
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-4">
+              <a
+                className="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                href="/Resume.pdf"
+                target="_blank"
+              >
+                Resume (PDF)
+              </a>
+              <a
+                className="block w-full rounded border border-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                href="/experience"
+              >
+                Experience Page
+              </a>
+              <button
+                className="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
+                onClick={toggleModal}
+              >
+                Contact Me
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Contact Modal */}
-      {isContactModalOpen && (
+      {/* Modal */}
+      {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg max-w-md w-full p-6">
-            <h2 className="text-2xl font-bold mb-4 text-center">Contact Me</h2>
-            <form action="mailto:connor@mcelwain.me" method="POST" enctype="text/plain">
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
+          <div className="bg-white rounded-lg p-8 max-w-md w-full">
+            <h2 className="text-xl font-bold mb-4">Contact Me</h2>
+            <form action="https://formspree.io/f/{your_formspree_id}" method="POST">
+              <label className="block mb-2">
+                Name
                 <input
                   type="text"
-                  id="name"
                   name="name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
+                  className="w-full mt-1 p-2 border rounded"
                   required
                 />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
+              </label>
+              <label className="block mb-2">
+                Email
                 <input
                   type="email"
-                  id="email"
                   name="email"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
+                  className="w-full mt-1 p-2 border rounded"
                   required
                 />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+              </label>
+              <label className="block mb-4">
+                Message
                 <textarea
-                  id="message"
                   name="message"
+                  className="w-full mt-1 p-2 border rounded"
                   rows="4"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring focus:ring-blue-600 focus:outline-none"
                   required
                 ></textarea>
-              </div>
+              </label>
               <div className="flex justify-between">
-                <button type="submit" className="block w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring">Send</button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                >
+                  Send
+                </button>
                 <button
                   type="button"
-                  className="ml-4 block w-full bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring"
-                  onClick={() => setContactModalOpen(false)}
+                  className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
+                  onClick={toggleModal}
                 >
                   Cancel
                 </button>
@@ -91,7 +94,7 @@ export default function Index() {
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 }
 
