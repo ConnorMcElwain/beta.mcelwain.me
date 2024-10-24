@@ -42,80 +42,57 @@ export default function TestIndex() {
         </div>
       </section>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <h2 className="text-xl font-bold mb-4">Contact Me</h2>
-            <form action="https://formspree.io/f/{your_formspree_id}" method="POST">
-              <label className="block mb-2">
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full mt-1 p-2 border rounded"
-                  required
-                />
-              </label>
-              <label className="block mb-2">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  className="w-full mt-1 p-2 border rounded"
-                  required
-                />
-              </label>
-              <label className="block mb-4">
-                Message
-                <textarea
-                  name="message"
-                  className="w-full mt-1 p-2 border rounded"
-                  rows="4"
-                  required
-                ></textarea>
-              </label>
-              <div className="flex justify-between">
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                >
-                  Send
-                </button>
-                <button
-                  type="button"
-                  className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
-                  onClick={toggleModal}
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
+{/* Modal */}
+{isModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg p-8 max-w-md w-full">
+      <h2 className="text-xl font-bold mb-4">Contact Me</h2>
+      <form action="https://formspree.io/f/{your_formspree_id}" method="POST">
+        <label className="block mb-2">
+          Name
+          <input type="text" name="name" className="w-full mt-1 p-2 border rounded" required />
+        </label>
+        <label className="block mb-2">
+          Email
+          <input type="email" name="email" className="w-full mt-1 p-2 border rounded" required />
+        </label>
+        <label className="block mb-4">
+          Message
+          <textarea name="message" className="w-full mt-1 p-2 border rounded" rows="4" required></textarea>
+        </label>
+        <div className="flex justify-between">
+          <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Send
+          </button>
+          <button type="button" className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700" onClick={toggleModal}>
+            Cancel
+          </button>
         </div>
-      )}
-    </>
-  );
-}
+      </form>
+    </div>
+  </div>
+)}
 
+{/* Add the new section here */}
+<section className="text-white mt-8">
+  <span className="flex items-center">
+    <span className="h-px flex-1 bg-white"></span>
+    <span className="font-bold shrink-0 px-6">About Me</span>
+    <span className="h-px flex-1 bg-white"></span>
+  </span>
 
-<span class="flex items-center">
-  <span class="h-px flex-1 bg-white"></span>
-  <span class="font-bold shrink-0 px-6">About Me</span>
-  <span class="h-px flex-1 bg-white"></span>
-</span>
+  <div className="mx-auto max-w-3xl text-center">
+    <p className="mx-auto mt-2 mb-2 max-w-3xl sm:text-xl/relaxed text-white">
+      I hold an Associate of Science degree in Network Administration and Support from Parkland College, where I gained valuable skills and knowledge in IT systems and services...
+    </p>
+  </div>
 
-<div class="mx-auto max-w-3xl text-center">
-<p class="mx-auto mt-2 mb-2 max-w-3xl sm:text-xl/relaxed text-white">
-        I hold an Associate of Science degree in Network Administration and Support from Parkland College, where I gained valuable skills and knowledge in IT systems and services. I am a dedicated Network/Systems Technician for the City of Urbana, Illinois, with a strong background in network administration, systems management, and IT infrastructure support. My role involves overseeing and maintaining critical IT systems across various city departments and the Park District, ensuring seamless operations for both internal staff and the public.
-      </p>
-</div>
-
-<span class="flex items-center">
-  <span class="h-px flex-1 bg-white"></span>
-  <span class="font-bold shrink-0 px-6">Work Experience</span>
-  <span class="h-px flex-1 bg-white"></span>
-</span>
+  <span className="flex items-center">
+    <span className="h-px flex-1 bg-white"></span>
+    <span className="font-bold shrink-0 px-6">Work Experience</span>
+    <span className="h-px flex-1 bg-white"></span>
+  </span>
+</section>
 
 
 <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
