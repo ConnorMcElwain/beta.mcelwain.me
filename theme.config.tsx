@@ -38,7 +38,7 @@ const config: DocsThemeConfig = {
           McElwain.me
         </a>{' '}
         |{' '}
-        <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commit/main" target="_blank">
+        <a href="https://github.com/ConnorMcElwain/beta.mcelwain.me/commits/main/" target="_blank">
           Change Logs
         </a>
         {' '}
