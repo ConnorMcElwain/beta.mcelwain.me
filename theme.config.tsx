@@ -3,6 +3,11 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
+  head: (
+    <>
+      <link rel="icon" href="/components/assets/favicon/logo.svg" />
+    </>
+  ),
   banner: {
     key: 'beta-release',
     text: (
