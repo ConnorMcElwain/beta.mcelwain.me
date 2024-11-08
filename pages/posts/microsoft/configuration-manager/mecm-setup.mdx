@@ -1,0 +1,52 @@
+import { Callout } from 'nextra-theme-docs'
+
+<Callout type="warning" emoji="⚠️">
+  This post is still being constructed, content/information will change!
+</Callout>
+
+# Configuration Manager (MECM) Set Up
+Here I will talk about why I'm learning/doing a full MECM install and setup. Why I'm rebuilding a test version of this in my homelab and why I'm doing this for work.
+### The Set Up
+* Primary Server (**Windows Server 2022**)
+	* Configuration Manager (MECM)
+	* SQL Server 2019
+	* Management Point
+* Distribution Server (**Windows Server 2022**)
+	* Distribution Point
+* WSUS Server (**Windows Server 2022**)
+
+### The Prerequisites
+[Configuration Manager Prerequisites Tool](https://msendpointmgr.com/configmgr-prerequisites-tool/#:~:text=ConfigMgr%20Prerequisites%20Tool%20is%20designed%20to%20help)
+
+First download and install the prerequisite tool on the Primary Server. Within the Sites section, click Site Type, select Primary Site, then click install.
+
+Go into the settings section of the Configuration Manager Prerequisites Tool and add your domain admin account credentials. This will be needed for the tool to properly update the Active Directory Schema. Select the Directory option, inside "Schema" click the detect button for the tool to identify your master domain controller. Click the browse button, within the Configuration Manager install folder we extracted earlier, find the file **EXTADSCH.EXE** within `SMSSETUP\BIN\X64`. Click the extend button to proceed with extending the Active Directory schema for Configuration Manager.
+
+Next we need to create the System Management Container on the main domain controller. In the **Server Manager** on the domain controller, click the "Tools" dropdown towards the top right of the window and select **ADSI Edit**. Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**. Select the "container" class and input **System Management** in the Value box. Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions. Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**. Click OK and close out of the ADSI Edit console.
+
+It's best practice to create the necessary service accounts and groups before installation:
+* Service Accounts
+	* SQL Server Service Account - **MECM-SQL**
+	* WSUS Service/Installation Account - **MECM-WSUS**
+* MECM Groups
+	* Domain group containing all MECM Admins - **MECM-Admins**
+	* Domain group containing all MECM servers in the hierarchy group - **MECM-SiteServers**
+
+Create a file named [**no_sms_on_drive.sms**](https://support.microsoft.com/en-us/topic/7d26d3b2-1ed3-c3fb-78ad-581b5a3a7fd4) on the C: drive on all encompassing servers (Primary Site, Management/Distribution Point, WSUS Server). This file prevents Configuration Manager and other services from installing programs, files, and logs that should otherwise be on a separate non OS drive.
+
+Within the Configuration Manager Prerequisites Tool, select the **ADK** section, within the "Online" tab, select the Windows ADK version you'd like installed. In my case, I'll be installing the **Windows 11 ADK version 22H2** and **Windows PE add-on for the ADK for Windows 11**. Create a folder to store the ADK install file, specify said location, and click install. Restart the system to complete the installation.
+
+Add your primary server (computer account) to the administrator group of your management/distribution point and WSUS server. You can access the Local Users and Groups by searching **lusrmgr.msc** in the **Run** function. Specifically for the WSUS server, also add the primary server computer account to the **WSUS Administrator** group as well.
+
+### SQL Server Setup
+Next download your preferred compatible SQL Server. Due to what license we already had available, we went with the [SQL Server 2019 Core Edition](https://www.microsoft.com/en-us/evalcenter/download-sql-server-2019#:~:text=Review%20SQL%20Server%202019%20system%20requirements%20and%20release?msockid=0009abed4e886c4b243ebfe54f206d04). During the SQL Server Setup process, in "Feature Selection", under Instance Features, select the **Database Engine Services** checkbox. Within the "Instance Configuration" section of the setup, I created a named instances called "**MECMSQL**", the instance name is up to you. You will need to create a domain joined service account specifically for the SQL Server. I created an account called MECM-SQL and input this user as the **SQL Server Agent** and **SQL Server Database Engine**. You can create two separate accounts for these services if your security structure requires it. On the next tab "Collation", you **NEED** to confirm you have "**SQL_Latin1_General_CP1_CI_AS**" as the selected Database Engine. This is required for Configuration Manager and SQL Server to install properly. It's recommended to create an MECM Admin group (and or an SQL Admin group) to specify and add who should receive admin privileges. In the "**Database Engine Configuration**" section of the setup installer, under the Server Configuration tab, specify the groups and or individual users who should become SQL Server administrators. Under the memory tab within "**Database Engine Configuration**" and select the recommended memory settings. After installing SQL Server, you will need to install the [ODBC Driver for SQL Server](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16) and [SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16) before you can start the Configuration Manager installation. Launch **SSMS** and connect to your SQL Server and create a new database for MECM. Launch **SQL Server Configuration Manager** and navigate to "SQL Server Network Configuration". Inside, select "Protocols for `[Your Instance Name]"`, right click "TCP/IP" and select properties. Remove any values within "TCP Dynamic Ports" and add port **1433** within TCP Port for IP1, IP2, IP3, IP4, and IPAll. In IP1, make sure Enabled is selected as **Yes**. Go back to SSMS and restart the SQL Server to apply these new settings. On the Primary Server, run PowerShell as administrator and input this command `New-NetFirewallRule -DisplayName "Allow ConfigMgr SQL Server ports" -Direction Inbound -LocalPort 1433,4022 -Protocol TCP -Action Allow`. This command opens the necessary ports within the firewall for the SQL Server.
+
+### Configuration Manager Install
+Download the [Configuration Manager installer](https://www.microsoft.com/en-us/evalcenter/download-microsoft-endpoint-configuration-manager#:~:text=Review%20Configuration%20Manager%20Current%20Branch%20supported?msockid=0009abed4e886c4b243ebfe54f206d04) and extract it. Open the installer by launching `splash.hta`. Create a folder to store Configuration Manager's prerequisite downloads and select said location to start its downloads. Under the **Database Information** portion of the install process, provide the custom SQL instance name (if you created one) and the name of the database we previously created. On the **Site System Roles** install section, direct the distribution and management point installs to the Distribution Server. Once the prerequisite check has completed with zero errors, proceed with the Configuration Manager install.
+
+### Configuration Manager
+First thing we want to do is ensure Configuration Manager has the latest updates installed. Navigate to the Administration section at the bottom left of Configuration Manager. Within Overview, go into **Updates and Servicing**. Click the "Check for updates" button, if there are updates available for installation, click on the update, make sure the "State" for the update says **Read to install**. If it's, click the Install Update Pack to proceed. Launch Configuration Manager, select **Monitoring** at the bottom left of the program, within **System Status**, ensure the monitoring sensors on **Site Status** and **Component Status** are green/"OK".
+
+
+
+To create an application like Google Chrome to deploy to systems, navigate to **Software Library** at the bottom left of Configuration Manager. Within **Application Management** go to **Applications**. Right click Applications, select **Create Application**. Select the type of application installer and the location where the installer is.
