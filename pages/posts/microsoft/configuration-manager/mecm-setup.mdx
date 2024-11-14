@@ -5,7 +5,7 @@ import { Callout } from 'nextra-theme-docs'
 </Callout>
 
 # Configuration Manager (MECM) Set Up
-Here I will talk about why I'm learning/doing a full MECM install and setup. Why I'm rebuilding a test version of this in my homelab and why I'm doing this for work.
+Here I will talk about why I'm learning/doing a full MECM install and setup. Why I'm rebuilding a test version of this in my home lab and why I'm doing this for work.
 ### The Set Up
 * Primary Server (**Windows Server 2022**)
 	* Configuration Manager (MECM)
@@ -16,13 +16,11 @@ Here I will talk about why I'm learning/doing a full MECM install and setup. Why
 * WSUS Server (**Windows Server 2022**)
 
 ### The Prerequisites
-[Configuration Manager Prerequisites Tool](https://msendpointmgr.com/configmgr-prerequisites-tool/#:~:text=ConfigMgr%20Prerequisites%20Tool%20is%20designed%20to%20help)
+First download and install the [Configuration Manager Prerequisites Tool](https://msendpointmgr.com/configmgr-prerequisites-tool/#:~:text=ConfigMgr%20Prerequisites%20Tool%20is%20designed%20to%20help) on the Primary Server. Within the Sites section, click Site Type, select Primary Site, then click install.
 
-First download and install the prerequisite tool on the Primary Server. Within the Sites section, click Site Type, select Primary Site, then click install.
+Next we need to create the System Management Container on the main domain controller. In the **Server Manager** on the domain controller, click the "Tools" dropdown towards the top right of the window and select **ADSI Edit**. Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**. Select the "container" class and input **System Management** in the Value box. Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions. Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**. Click OK and close out of the ADSI Edit console. Make sure you add the **computer account** of the primary server that's hosting MECM to the **Schema Admins** security group in AD Users and Computers. This step is **NEEDED** before proceeding below.
 
 Go into the settings section of the Configuration Manager Prerequisites Tool and add your domain admin account credentials. This will be needed for the tool to properly update the Active Directory Schema. Select the Directory option, inside "Schema" click the detect button for the tool to identify your master domain controller. Click the browse button, within the Configuration Manager install folder we extracted earlier, find the file **EXTADSCH.EXE** within `SMSSETUP\BIN\X64`. Click the extend button to proceed with extending the Active Directory schema for Configuration Manager.
-
-Next we need to create the System Management Container on the main domain controller. In the **Server Manager** on the domain controller, click the "Tools" dropdown towards the top right of the window and select **ADSI Edit**. Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**. Select the "container" class and input **System Management** in the Value box. Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions. Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**. Click OK and close out of the ADSI Edit console.
 
 It's best practice to create the necessary service accounts and groups before installation:
 * Service Accounts
@@ -31,6 +29,7 @@ It's best practice to create the necessary service accounts and groups before in
 * MECM Groups
 	* Domain group containing all MECM Admins - **MECM-Admins**
 	* Domain group containing all MECM servers in the hierarchy group - **MECM-SiteServers**
+Provide these service accounts and groups in the proper **administrative AD permission groups**.
 
 Create a file named [**no_sms_on_drive.sms**](https://support.microsoft.com/en-us/topic/7d26d3b2-1ed3-c3fb-78ad-581b5a3a7fd4) on the C: drive on all encompassing servers (Primary Site, Management/Distribution Point, WSUS Server). This file prevents Configuration Manager and other services from installing programs, files, and logs that should otherwise be on a separate non OS drive.
 
@@ -47,6 +46,6 @@ Download the [Configuration Manager installer](https://www.microsoft.com/en-us/e
 ### Configuration Manager
 First thing we want to do is ensure Configuration Manager has the latest updates installed. Navigate to the Administration section at the bottom left of Configuration Manager. Within Overview, go into **Updates and Servicing**. Click the "Check for updates" button, if there are updates available for installation, click on the update, make sure the "State" for the update says **Read to install**. If it's, click the Install Update Pack to proceed. Launch Configuration Manager, select **Monitoring** at the bottom left of the program, within **System Status**, ensure the monitoring sensors on **Site Status** and **Component Status** are green/"OK".
 
-
-
 To create an application like Google Chrome to deploy to systems, navigate to **Software Library** at the bottom left of Configuration Manager. Within **Application Management** go to **Applications**. Right click Applications, select **Create Application**. Select the type of application installer and the location where the installer is.
+
+Next is to find all of the devices on your domain. Navigate to Administration, Hierarchy Configuration, then Discovery Methods. Here we will determine which discovery method we want to enable to find our domain joined systems. In this instance, I will use the **Active Directory System Discovery** method. This will discover all devices that have been domain joined. Right click the discovery method and select properties. Check the enable box, click apply, go back to the Discovery Methods page within the Administration tab of MECM. Now click the **Run Full Discovery Now** button towards the top left corner of the Configuration Manager window. It may take some time to complete the discovery process. Confirm all your systems have been populated by navigating to **Assets and Compliance**, **Device Collections**, and then **All Systems**.
