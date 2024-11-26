@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
     key: 'beta-release',
     text: (
       <a>
-        🔥 Check out my documented journey on the set up of <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>AZ-104</u></b></a>! 🔥</a>
+        🔥 Check out my documented journey on the set up of <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>AZ-104</u></b></a>! 🔥
       </a>
     )
   },
