@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
     key: 'beta-release',
     text: (
       <a>
-        🔥 Check out my updated documentation on the <a href="/posts/microsoft/azure/az-104"><b><u>AZ-104</u></b></a> and my journey into learning <a href="/posts/microsoft/microsoft-endpoint-manager"><b><u>MECM</u></b></a> and <a href="/posts/microsoft/powershell-for-microsoft365"><b><u>PowerShell for M365!</u></b></a>
+        🔥 Check out my documented journey on the set up of <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>AZ-104</u></b></a>! 🔥</a>
       </a>
     )
   },
