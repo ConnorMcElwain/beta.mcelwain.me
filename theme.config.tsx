@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
     key: 'beta-release',
     text: (
       <a>
-        🔥 Check out my documented journey on how to set up <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>Configuration Manager (MECM)</u></b></a> and my updated notes on the <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>Azure AZ-104 Exam</u></b></a>! 🔥
+        🔥 Check out my documented journey on how to set up <a href="/posts/microsoft/configuration-manager/mecm-setup"><b><u>Configuration Manager (MECM)</u></b></a> and my updated notes on the <a href="/posts/microsoft/azure/az-104/cert-notes"><b><u>Azure AZ-104 Exam</u></b></a>! 🔥
       </a>
     )
   },
