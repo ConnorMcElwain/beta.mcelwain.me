@@ -8,5 +8,6 @@
     "chapter7": "Chapter 7 - ARM Templates",
     "chapter8": "Chapter 8 - Storage Accounts",
     "chapter9": "Chapter 9 - Virtual Machines",
-    "chapter10": "Chapter 10 - Azure Disks"
+    "chapter10": "Chapter 10 - Azure Disks",
+    "chapter11": "Chapter 11 - Azure Application Gateway"
 }
