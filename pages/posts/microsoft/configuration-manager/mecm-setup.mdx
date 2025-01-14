@@ -1,4 +1,6 @@
 import { Callout } from 'nextra-theme-docs'
+import Image from 'next/image'
+
 
 <Callout type="warning" emoji="⚠️">
   This post is still being constructed, content/information will change!
@@ -18,10 +20,8 @@ In this post, I will cover why I'm learning and building a full MECM install and
 ### The Prerequisites
 First download and install the [Configuration Manager Prerequisites Tool](https://msendpointmgr.com/configmgr-prerequisites-tool/#:~:text=ConfigMgr%20Prerequisites%20Tool%20is%20designed%20to%20help) on the **Primary Server**. This tool isn't required, but I have found it extremely helpful for installing and setting up some of the basic drivers, settings, and addons that are needed for Configuration Manager. Within the Sites section of the application, click Site Type, select Primary Site, then click install. This may take some time, confirm in the **Installation Activity** section that all features have been successfully installed onto the Primary Server.
 <div class="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-      <img class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50" src="/public/screenshots/mecm-setup/The Prerequisites/prereq-1.png" alt="Configuration Manager Prerequisites Tool"/>
+      <img class="object-cover object-center w-full rounded-lg shadow-xl h-96 shadow-blue-gray-900/50" src="/components/assets/screenshots/mecm-setup/The Prerequisites/prereq-1.png" alt="Configuration Manager Prerequisites Tool"/>
 </div>
-
-![Test Image](/public/screenshots/mecm-setup/The Prerequisites/prereq-1.png)
 
 #### System Management
 Next we need to create the System Management Container on the main domain controller. In the **Server Manager** on the **domain controller**, click the "Tools" dropdown towards the top right of the window and select **ADSI Edit**. Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**. Select the "container" class and input **System Management** in the Value box. Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions. Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**. Click OK and close out of the ADSI Edit console. Make sure you add the **computer account** of the primary server that's hosting MECM to the **Schema Admins** security group in **Active Directory Users and Computers**. This step is **NEEDED** before proceeding below.
