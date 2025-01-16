@@ -34,7 +34,48 @@ Next we need to create the System Management Container on the main domain contro
     alt="ADSI Edit Location"
     class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
 </div>
-Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**. Select the "container" class and input **System Management** in the Value box. Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions. Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**. Click OK and close out of the ADSI Edit console. Make sure you add the **computer account** of the primary server that's hosting MECM to the **Schema Admins** security group in **Active Directory Users and Computers**. This step is **NEEDED** before proceeding below.
+Right click ADSI Edit and select "Connect to...", leave everything default and click OK. Open up "Default naming context" and CN=System. Right click CN=System, select **New** and then **Object**.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-3.png"
+    alt="ADSI Editing"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Select the "container" class and input **System Management** in the Value box.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-4.png"
+    alt="Creating System Management Object"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Right click the System Management folder, select properties, go into the **Security tab**, add the primary server computer account and **Grant Full Control** permissions.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-5.png"
+    alt="Creating System Management Object"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-6.png"
+    alt="Creating System Management Object"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Click OK and close out of the ADSI Edit console. Make sure you add the **computer account** of the primary server that's hosting MECM to the **Schema Admins** security group in **Active Directory Users and Computers**.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-7.png"
+    alt="Creating System Management Object"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+This step is **NEEDED** before proceeding below.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-8.png"
+    alt="Creating System Management Object"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
 
 #### Updating Active Directory Schema
 Go into the settings section of the Configuration Manager Prerequisites Tool on the **Primary Server** and add your domain admin account credentials. You can provide these credentials by navigating to the **Settings** section, then go to the **Credentials** tab. This will be needed for the tool to properly update the [Active Directory Schema](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/schema-extensions). If you haven't already, download **[Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-microsoft-endpoint-configuration-manager?msockid=1a181e0c6c5565d4056e0b336d3a6464)** on the **Primary Server**. Now navigate back to the Configuration Manager Prerequisites Tool, select the **Directory** option, and within the **Schema** tab, click the detect button for the tool to identify your master domain controller. Click the browse button, within the Configuration Manager install folder we extracted earlier, find the file **[EXTADSCH.EXE](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/extend-the-active-directory-schema#option-a-use-the-extadschexe-tool)** within `SMSSETUP\BIN\X64`. Click the extend button to proceed with extending the Active Directory schema for Configuration Manager.
