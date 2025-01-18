@@ -52,36 +52,78 @@ Right click the System Management folder, select properties, go into the **Secur
 <div class="mx-auto p-3">
   <img 
     src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-5.png"
-    alt="Creating System Management Object"
+    alt="Adding primary server computer account"
     class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
 </div>
 Then, click "Advanced", select the primary server computer account, then click **Edit**. In the Applies to list, select **This object and all descendant objects**.
 <div class="mx-auto p-3">
   <img 
     src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-6.png"
-    alt="Creating System Management Object"
+    alt="Permission Entry for System Management"
     class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
 </div>
 Click OK and close out of the ADSI Edit console. Make sure you add the **computer account** of the primary server that's hosting MECM to the **Schema Admins** security group in **Active Directory Users and Computers**.
 <div class="mx-auto p-3">
   <img 
     src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-7.png"
-    alt="Creating System Management Object"
+    alt="Schema Admins"
     class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
 </div>
 This step is **NEEDED** before proceeding below.
 <div class="mx-auto p-3">
   <img 
     src="/screenshots/mecm-setup/The Prerequisites/System Management/sysm-8.png"
-    alt="Creating System Management Object"
+    alt="Adding primary server computer account to Schema Admin AD Group"
     class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
 </div>
 
 #### Updating Active Directory Schema
-Go into the settings section of the Configuration Manager Prerequisites Tool on the **Primary Server** and add your domain admin account credentials. You can provide these credentials by navigating to the **Settings** section, then go to the **Credentials** tab. This will be needed for the tool to properly update the [Active Directory Schema](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/schema-extensions). If you haven't already, download **[Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-microsoft-endpoint-configuration-manager?msockid=1a181e0c6c5565d4056e0b336d3a6464)** on the **Primary Server**. Now navigate back to the Configuration Manager Prerequisites Tool, select the **Directory** option, and within the **Schema** tab, click the detect button for the tool to identify your master domain controller. Click the browse button, within the Configuration Manager install folder we extracted earlier, find the file **[EXTADSCH.EXE](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/extend-the-active-directory-schema#option-a-use-the-extadschexe-tool)** within `SMSSETUP\BIN\X64`. Click the extend button to proceed with extending the Active Directory schema for Configuration Manager.
+Go into the settings section of the Configuration Manager Prerequisites Tool on the **Primary Server** and add your domain admin account credentials. You can provide these credentials by navigating to the **Settings** section, then go to the **Credentials** tab.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/Updating Active Directory Schema/schema-1.png"
+    alt="Admin Credentials for Configmger prerequisties tool"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+This will be needed for the tool to properly update the [Active Directory Schema](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/schema-extensions). If you haven't already, download **[Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-microsoft-endpoint-configuration-manager?msockid=1a181e0c6c5565d4056e0b336d3a6464)** on the **Primary Server**. Now navigate back to the Configuration Manager Prerequisites Tool, select the **Directory** option, and within the **Schema** tab, click the detect button for the tool to identify your master domain controller.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/Updating Active Directory Schema/schema-2.png"
+    alt="AD Schema Update"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Click the browse button, within the Configuration Manager install folder we extracted earlier, find the file **[EXTADSCH.EXE](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/network/extend-the-active-directory-schema#option-a-use-the-extadschexe-tool)** within `SMSSETUP\BIN\X64`.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/The Prerequisites/Updating Active Directory Schema/schema-3.png"
+    alt="Adding extadsch.exe file to AD Schema"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Click the extend button to proceed with extending the Active Directory schema for Configuration Manager.
 
 ### Installing WSUS Server
-To install Windows Server Update Services (WSUS), navigate to the **Manage** tab towards the top right corner of **Server Manager** and select **Add Roles and Features**. The installation type will be **Role-based or feature-based installation**. On the **Server Roles** page, select the **Windows Server Update Services** check box and click next. On the "Features" page, make sure you check **.NET Framework 3.5 Features**. This is required for WSUS to install properly. In Role Services under WSUS, leave the defaults of **WID Connectivity** and **WSUS Services** checked and click next. Before continuing, we need to create a folder (preferably on a separate drive from the OS) named **WSUS**. This is the location where WSUS will store updates locally. Check the box for **Store updates in the following location**, and provide the path for the folder you just created. Once WSUS is installed, you should get a notice in Server Manager wanting you to complete **Post-Installation tasks**, select it to start the post-installation configuration process. Once that has completed, you are done installing and configuring WSUS. If you do open Windows Server Update Services, **do not continue** with the configuration process. This will be done after we have set up our Primary Server and installed/configured Configuration Manager.
+To install Windows Server Update Services (WSUS), navigate to the **Manage** tab towards the top right corner of **Server Manager** and select **Add Roles and Features**. The installation type will be **Role-based or feature-based installation**. On the **Server Roles** page, select the **Windows Server Update Services** check box and click next.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Installing WSUS Server/wsus-1.png"
+    alt="Installing Windows Server Update Services"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+On the "Features" page, make sure you check **.NET Framework 3.5 Features**. This is **REQUIRED** for WSUS to install properly. In Role Services under WSUS, leave the defaults of **WID Connectivity** and **WSUS Services** checked and click next.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Installing WSUS Server/wsus-2.png"
+    alt="Role Service installs for WSUS"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Before continuing, we need to create a folder (preferably on a separate drive from the OS) named **WSUS**. This is the location where WSUS will store updates locally. Check the box for **Store updates in the following location**, and provide the path for the folder you just created. Once WSUS is installed, you should get a notice in Server Manager wanting you to complete **Post-Installation tasks**, select it to start the post-installation configuration process. Once that has completed, you are done installing and configuring WSUS.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Installing WSUS Server/wsus-3.png"
+    alt="Post-deployment Configuration for WSUS"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+If you do open Windows Server Update Services, **do NOT continue** with the configuration process. This will be done after we have set up our Primary Server and installed/configured Configuration Manager.
 
 ### Service Accounts & AD Groups
 It's best practice to create the necessary service accounts and groups before installation:
@@ -93,17 +135,62 @@ It's best practice to create the necessary service accounts and groups before in
 	* Domain group containing all MECM Admins - **MECM-Admins**
 	* Domain group containing all MECM servers in the hierarchy group - **MECM-SiteServers**
 
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Service Accounts & AD Groups/accounts-groups-1.png"
+    alt="AD User Accounts Created"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Service Accounts & AD Groups/accounts-groups-2.png"
+    alt="AD Groups Created"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
 Provide these service accounts and groups in the proper **administrative AD permission groups**.
 
 ### Primary Server Set Up
 #### C:\ Drive File Prevention
-Create a file named [**no_sms_on_drive.sms**](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/the-content-library) on the C: drive on **all encompassing servers** (Primary Site, Management/Distribution Point, WSUS Server). This file prevents Configuration Manager and other services from installing programs, files, and logs that should otherwise be on a separate non OS drive.
+Create a file named [**no_sms_on_drive.sms**](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/the-content-library) on the C: drive on **all encompassing servers** (Primary Site, Management/Distribution Point, WSUS Server).
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/C Drive File Prevention/c-drive-file-prevention-1.png"
+    alt="NO_SMS_ON_DRIVE.SMS file created on C: Drive"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+This file prevents Configuration Manager and other services from installing programs, files, and logs that should otherwise be on a separate non OS drive.
 
 #### [Windows ADK](https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install) Type/Install
-Within the Configuration Manager Prerequisites Tool, select the **ADK** section, within the "Online" tab, select the Windows ADK version you'd like installed. In my case, I'll be installing the **[Windows 11 ADK version 22H2](https://go.microsoft.com/fwlink/?linkid=2196127)** and **[Windows PE add-on for the ADK for Windows 11](https://go.microsoft.com/fwlink/?linkid=2196224)**. Create a folder to store the ADK install file, specify said location, and click install. Restart the system to complete the installation.
+Within the Configuration Manager Prerequisites Tool, select the **ADK** section, within the "Online" tab, select the Windows ADK version you'd like installed. In my case, I'll be installing the **[Windows 11 ADK version 22H2](https://go.microsoft.com/fwlink/?linkid=2196127)** and **[Windows PE add-on for the ADK for Windows 11](https://go.microsoft.com/fwlink/?linkid=2196224)**.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Windows ADK Type Install/windows-adk-install-1.png"
+    alt="Windows ADK Install using ConfigMgr Prerequisties tool"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Create a folder to store the ADK install file, specify said location, and click install. Restart the system to complete the installation.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Windows ADK Type Install/windows-adk-install-2.png"
+    alt="Windows ADK Install Successfully Screen"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
 
 #### Local Administrative Access for Primary Server
-Add your primary server (**computer account**) to the administrator group of your **management/distribution point** and **WSUS server**. You can access the Local Users and Groups by searching **lusrmgr.msc** in the **Run** function. Specifically for the WSUS server, also add the primary server computer account to the **WSUS Administrator** group as well.
+Add your primary server (**computer account**) to the administrator group of your **management/distribution point** and **WSUS server**. You can access the Local Users and Groups by searching **lusrmgr.msc** in the **Run** function.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Local Administrative Access for Primary Server/local-admin-1.png"
+    alt="Run lusrmgr.msc"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
+Specifically for the WSUS server, also add the primary server computer account to the **WSUS Administrator** group as well.
+<div class="mx-auto p-3">
+  <img 
+    src="/screenshots/mecm-setup/Local Administrative Access for Primary Server/local-admin-2.png"
+    alt="Adding a WSUS Administrator"
+    class="border-solid border-1 border-black rounded shadow-lg w-full opacity-85"/>
+</div>
 
 ### SQL Server Set Up
 Next download your preferred compatible SQL Server. Due to what license we already had available, we went with the [SQL Server 2019 Core Edition](https://www.microsoft.com/en-us/evalcenter/download-sql-server-2019#:~:text=Review%20SQL%20Server%202019%20system%20requirements%20and%20release?msockid=0009abed4e886c4b243ebfe54f206d04). Check the **[supported SQL server options](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/support-for-sql-server-versions)** if your environment requires newer/different SQL database needs. Launch `SQL2019-SSEl-Eval` and select Custom for the SQL installation process. The SQL Server Installation Center should open, select the **Installation** tab towards the left side of the window, and select **New SQL Server stand-alone installation or add features to an existing installation**. Selecting what version of SQL Server you're on is important, if you do not have a product key, select **Evaluation** under the "Specify a free edition:" drop down section. Do **NOT** select **Express**. SQL Express is [not compatible with the MECM](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/configs/support-for-sql-server-versions#sql-server-2019-standard-enterprise) environment we are building. During the SQL Server Setup process, in "Feature Selection", under Instance Features, select the **Database Engine Services** checkbox. Within the "Instance Configuration" section of the setup, I created a named instances called "**MECMSQL**", the instance name is up to you. You will need to create a domain joined service account specifically for the SQL Server. I created an account called MECM-SQL and input this user as the **SQL Server Agent** and **SQL Server Database Engine**. You can create two separate accounts for these services if your security structure requires it. On the next tab "Collation", you **NEED** to confirm you have "**[SQL_Latin1_General_CP1_CI_AS](https://learn.microsoft.com/en-us/sql/relational-databases/collations/set-or-change-the-server-collation?view=sql-server-ver16#server-collation-in-sql-server)**" as the selected Database Engine. This is required for Configuration Manager and SQL Server to install properly. It's recommended to create an MECM Admin group (and or an SQL Admin group) to specify and add who should receive admin privileges. In the "**Database Engine Configuration**" section of the setup installer, under the Server Configuration tab, specify the groups and or individual users who should become SQL Server administrators. Next, under the memory tab within "**Database Engine Configuration**", select the recommended memory settings. You can now exit the SQL Server Installation Center program.
