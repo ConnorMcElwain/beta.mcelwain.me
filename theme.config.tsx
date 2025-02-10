@@ -26,7 +26,8 @@ const config: DocsThemeConfig = {
     if (asPath === '/') {
       return {
         title: 'mcelwain.me – beta',
-        titleTemplate: null
+        defaultTitle: 'mcelwain.me – beta', // Ensures no template is applied
+        titleTemplate: '' // Completely removes any additional formatting
       };
     }
   
