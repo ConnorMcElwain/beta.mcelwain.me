@@ -21,11 +21,10 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/ConnorMcElwain',
   },
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
-      return {
-        titleTemplate: 'mcelwain.me – beta'
-      }
+    const { asPath } = useRouter();
+    return {
+      title: asPath === '/' ? 'mcelwain.me – beta' : undefined,
+      titleTemplate: 'mcelwain.me – beta | %s'
     }
   },
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
