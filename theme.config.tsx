@@ -22,11 +22,17 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     const { asPath } = useRouter();
-    return {
-      title: asPath === '/' ? 'mcelwain.me – beta' : undefined,
-      titleTemplate: 'mcelwain.me – beta | %s'
+    
+    if (asPath === '/') {
+      return {
+        title: 'mcelwain.me – beta' // No template applied here
+      };
     }
-  },
+  
+    return {
+      titleTemplate: '%s | mcelwain.me – beta' // Only applies to non-homepage routes
+    };
+  },  
   docsRepositoryBase: 'https://github.com/ConnorMcElwain/beta.mcelwain.me',
   editLink: {
     component: null
