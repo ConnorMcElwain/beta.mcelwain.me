@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "frame-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
