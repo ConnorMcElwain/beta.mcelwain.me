@@ -40,24 +40,25 @@ export default function ContactModal() {
       {/* Contact Me Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="block w-full rounded border border-blue-600 bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto">
+        className="block w-full rounded-lg border border-blue-500 bg-blue-500 px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 active:bg-blue-700 sm:w-auto"
+      >
         Contact Me
       </button>
 
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+          <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md relative">
             {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 focus:outline-none"
             >
               ✕
             </button>
 
             {/* Form */}
-            <h2 className="text-xl font-bold mb-4">Contact Me</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Contact Me</h2>
             <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
               <input
                 type="text"
@@ -65,7 +66,7 @@ export default function ContactModal() {
                 placeholder="Your Name"
                 value={formData.field1}
                 onChange={handleChange}
-                className="border p-2 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
               <input
@@ -74,7 +75,7 @@ export default function ContactModal() {
                 placeholder="Your Email"
                 value={formData.field2}
                 onChange={handleChange}
-                className="border p-2 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
               <textarea
@@ -82,13 +83,13 @@ export default function ContactModal() {
                 placeholder="Your Message"
                 value={formData.field3}
                 onChange={handleChange}
-                className="border p-2 rounded-md focus:ring focus:ring-blue-300"
+                className="w-full border border-gray-300 rounded-lg p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 rows={4}
                 required
               ></textarea>
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                className="w-full bg-blue-500 text-white px-4 py-3 rounded-lg shadow-md transition duration-300 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 active:bg-blue-700"
               >
                 Send Message
               </button>
