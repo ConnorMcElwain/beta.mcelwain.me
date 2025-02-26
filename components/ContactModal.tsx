@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion";
 
 export default function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,58 +45,72 @@ export default function ContactModal() {
         Contact Me
       </button>
 
-      {/* Modal */}
-      {isOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
-    <div className="bg-black text-white p-6 rounded-lg shadow-lg w-96 relative">
-      {/* Close Button */}
-      <button
-        onClick={() => setIsOpen(false)}
-        className="absolute top-2 right-2 text-gray-400 hover:text-gray-200"
-      >
-        ✕
-      </button>
+      {/* Modal with Animation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="bg-black text-white p-6 rounded-lg shadow-lg w-96 relative"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-2 right-2 text-gray-400 hover:text-gray-200"
+              >
+                ✕
+              </button>
 
-      {/* Form */}
-      <h2 className="text-xl font-bold mb-4">Contact Me</h2>
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <input
-          type="text"
-          name="field1"
-          placeholder="Your Name"
-          value={formData.field1}
-          onChange={handleChange}
-          className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
-          required
-        />
-        <input
-          type="email"
-          name="field2"
-          placeholder="Your Email"
-          value={formData.field2}
-          onChange={handleChange}
-          className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
-          required
-        />
-        <textarea
-          name="field3"
-          placeholder="Your Message"
-          value={formData.field3}
-          onChange={handleChange}
-          className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
-          rows={4}
-          required
-        ></textarea>
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
-  </div>
-)}
+              {/* Form */}
+              <h2 className="text-xl font-bold mb-4">Contact Me</h2>
+              <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+                <input
+                  type="text"
+                  name="field1"
+                  placeholder="Your Name"
+                  value={formData.field1}
+                  onChange={handleChange}
+                  className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
+                  required
+                />
+                <input
+                  type="email"
+                  name="field2"
+                  placeholder="Your Email"
+                  value={formData.field2}
+                  onChange={handleChange}
+                  className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
+                  required
+                />
+                <textarea
+                  name="field3"
+                  placeholder="Your Message"
+                  value={formData.field3}
+                  onChange={handleChange}
+                  className="border p-2 rounded-md focus:ring focus:ring-blue-300 bg-black text-white border-gray-600"
+                  rows={4}
+                  required
+                ></textarea>
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
+                  Send Message
+                </button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
