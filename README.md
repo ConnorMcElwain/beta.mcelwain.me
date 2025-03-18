@@ -4,6 +4,7 @@
 ## Details
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Web Form**: [FormBee](https://formbee.dev/)
 - **Template**: [Nextra](https://nextra.site/)
 - **Deployment**: [Vercel](https://vercel.com)
 
