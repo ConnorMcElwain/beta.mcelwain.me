@@ -26,10 +26,10 @@ const config: DocsThemeConfig = {
         width={75} 
         height={50} 
         priority 
-        className="fixed left-4 top-4" 
+        className="h-auto w-auto object-contain"
       />
     </Link>
-  ),
+  ),  
   project: {
     link: 'https://github.com/ConnorMcElwain',
   },
