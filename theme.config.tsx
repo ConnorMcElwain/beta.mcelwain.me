@@ -20,7 +20,7 @@ const config: DocsThemeConfig = {
   },
   logo: (
     <Link href="/" className="flex items-center space-x-2">
-      <Image src="/logo.png" alt="Site Logo" width={150} height={50} />
+      <Image src="/logo.png" alt="Site Logo" width={75} height={50} />
     </Link>
   ),
   project: {
