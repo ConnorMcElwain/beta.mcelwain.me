@@ -26,7 +26,6 @@ const config: DocsThemeConfig = {
         width={75} 
         height={50} 
         priority 
-        unoptimized
         className="h-auto w-auto object-contain"
       />
     </Link>
