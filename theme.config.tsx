@@ -16,7 +16,7 @@ const config: DocsThemeConfig = {
       </a>
     )
   },
-  logo: <span>beta.mcelwain.me</span>,
+  logo: <link rel="icon" href="/logo.png" type="image/x-icon" />,
   project: {
     link: 'https://github.com/ConnorMcElwain',
   },
